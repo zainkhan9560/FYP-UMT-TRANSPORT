@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, Clock3, MapPin, Navigation } from 'lucide-react'
 
-import UmtLogo from '../brand/UmtLogo.jsx'
+import umtLogo from '../../assets/umt-logo.png'
+import umtSeal from '../../assets/umt-seal.png'
 import shuttle from '../../assets/campus/campus-shuttle.webp'
 import lawn from '../../assets/campus/campus-lawn.webp'
 import building from '../../assets/campus/campus-building.webp'
@@ -53,14 +54,14 @@ const SLIDE_ORDER = {
   recovery: ['building', 'shuttle', 'lawn'],
 }
 
-function Brand({ className, logoSize }) {
+function Brand() {
   return (
-    <Link to="/login" className={className}>
+    <Link to="/login" className="brand">
       <span className="brand-icon">
-        <UmtLogo size={logoSize} />
+        <img src={umtSeal} alt="UMT seal" />
       </span>
       <span>
-        UMT <strong>Transit</strong>
+        UMT<strong>Go</strong>
       </span>
     </Link>
   )
@@ -87,7 +88,7 @@ export default function AuthLayout({ children, mode = 'login' }) {
           ))}
         </div>
 
-        <Brand className="brand" logoSize={46} />
+        <Brand />
 
         <div className="visual-content">
           <span className="eyebrow">
@@ -133,13 +134,13 @@ export default function AuthLayout({ children, mode = 'login' }) {
         </div>
 
         <div className={`auth-form-wrap ${isSignup ? 'signup-form-wrap' : ''}`}>
-          <Brand className="mobile-brand" logoSize={40} />
+          <img
+            className="form-logo"
+            src={umtLogo}
+            alt="University of Management and Technology, Estd. 1990"
+          />
 
           {children}
-
-          <p className="security-note">
-            University transport access · Secure account required
-          </p>
         </div>
       </section>
     </main>

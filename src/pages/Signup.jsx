@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 import AuthLayout from '../components/auth/AuthLayout.jsx'
 import AuthInput from '../components/auth/AuthInput.jsx'
@@ -54,14 +54,8 @@ export default function Signup() {
 
   return (
     <AuthLayout mode="signup">
-      <Link to="/login" className="back-link">
-        <ArrowLeft size={16} /> Back to sign in
-      </Link>
-
       <div className="form-heading">
-        <span className="form-kicker">UMT TRANSIT · NEW ACCOUNT</span>
-        <h2>Create your account</h2>
-        <p>Enter your details to get started.</p>
+        <h2>Create account</h2>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -74,30 +68,28 @@ export default function Signup() {
           }}
         />
 
-        <AuthInput
-          id="signup-name"
-          label="Full name"
-          name="name"
-          placeholder="Enter your full name"
-          value={form.name}
-          onChange={updateField}
-          autoComplete="name"
-          required
-        />
+        <div className="field-row">
+          <AuthInput
+            id="signup-name"
+            label="Full name"
+            name="name"
+            placeholder="Full name"
+            value={form.name}
+            onChange={updateField}
+            autoComplete="name"
+            required
+          />
 
-        <AuthInput
-          id="signup-identifier"
-          label={isStudent ? 'Student ID' : 'Driver ID'}
-          name="identifier"
-          placeholder={
-            isStudent
-              ? 'Enter your university student ID'
-              : 'Enter your assigned driver ID'
-          }
-          value={form.identifier}
-          onChange={updateField}
-          required
-        />
+          <AuthInput
+            id="signup-identifier"
+            label={isStudent ? 'Student ID' : 'Driver ID'}
+            name="identifier"
+            placeholder={isStudent ? 'Student ID' : 'Driver ID'}
+            value={form.identifier}
+            onChange={updateField}
+            required
+          />
+        </div>
 
         <AuthInput
           id="signup-email"
@@ -111,31 +103,33 @@ export default function Signup() {
           required
         />
 
-        <AuthInput
-          id="signup-password"
-          label="Password"
-          name="password"
-          type="password"
-          placeholder={`At least ${MIN_PASSWORD_LENGTH} characters`}
-          value={form.password}
-          onChange={updateField}
-          autoComplete="new-password"
-          minLength={MIN_PASSWORD_LENGTH}
-          required
-        />
+        <div className="field-row">
+          <AuthInput
+            id="signup-password"
+            label="Password"
+            name="password"
+            type="password"
+            placeholder={`Min. ${MIN_PASSWORD_LENGTH} characters`}
+            value={form.password}
+            onChange={updateField}
+            autoComplete="new-password"
+            minLength={MIN_PASSWORD_LENGTH}
+            required
+          />
 
-        <AuthInput
-          id="signup-confirm-password"
-          label="Confirm password"
-          name="confirmPassword"
-          type="password"
-          placeholder="Re-enter your password"
-          value={form.confirmPassword}
-          onChange={updateField}
-          autoComplete="new-password"
-          minLength={MIN_PASSWORD_LENGTH}
-          required
-        />
+          <AuthInput
+            id="signup-confirm-password"
+            label="Confirm"
+            name="confirmPassword"
+            type="password"
+            placeholder="Re-enter password"
+            value={form.confirmPassword}
+            onChange={updateField}
+            autoComplete="new-password"
+            minLength={MIN_PASSWORD_LENGTH}
+            required
+          />
+        </div>
 
         <button className="submit-button signup-submit" type="submit">
           Create account <ArrowRight size={18} />
@@ -149,7 +143,7 @@ export default function Signup() {
       </form>
 
       <p className="signup-prompt">
-        Already registered? <Link to="/login">Sign in</Link>
+        Have an account? <Link to="/login">Log in</Link>
       </p>
     </AuthLayout>
   )
