@@ -43,7 +43,11 @@ export default function LiveMapCard() {
         <div className="lp-map-route">
           <span className="lp-map-dot" />
           <div>
+<<<<<<< HEAD
+            <strong>Askari X</strong>
+=======
             <strong>Your bus</strong>
+>>>>>>> origin/dev/zain
             <span>To UMT campus</span>
           </div>
         </div>
@@ -53,7 +57,11 @@ export default function LiveMapCard() {
       </div>
 
       <div className="lp-map-canvas">
+<<<<<<< HEAD
+        <svg viewBox="0 0 420 300" role="img" aria-label="Illustration of a bus travelling along its route to the UMT campus">
+=======
         <svg viewBox="0 0 420 300" role="img" aria-label="Illustration of a bus travelling to the UMT campus">
+>>>>>>> origin/dev/zain
           <defs>
             <clipPath id="lp-seal-clip">
               <circle cx="372" cy="48" r="19" />

@@ -2,13 +2,24 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
+<<<<<<< HEAD
+  ArrowUpRight,
+=======
+>>>>>>> origin/dev/zain
   BellRing,
   BusFront,
   Check,
   Clock3,
+<<<<<<< HEAD
+  MapPin,
+  Menu,
+  Navigation,
+  Route,
+=======
   Menu,
   Navigation,
   Users,
+>>>>>>> origin/dev/zain
   ShieldCheck,
   X,
 } from 'lucide-react'
@@ -17,17 +28,32 @@ import LiveMapCard from '../components/landing/LiveMapCard.jsx'
 import umtSeal from '../assets/umt-seal.png'
 import shuttle from '../assets/campus/campus-shuttle.webp'
 import lawn from '../assets/campus/campus-lawn.webp'
+<<<<<<< HEAD
+import building from '../assets/campus/campus-building.webp'
+=======
+>>>>>>> origin/dev/zain
 import '../styles/landing.css'
 
 const NAV_LINKS = [
   { href: '#features', label: 'Features' },
   { href: '#how-it-works', label: 'How it works' },
+<<<<<<< HEAD
+  { href: '#routes', label: 'Routes' },
+  { href: '#campus', label: 'Campus' },
+]
+
+const STATS = [
+  { value: '9', label: 'Campus routes' },
+  { value: '74', label: 'Pickup stops' },
+  { value: 'Live', label: 'Bus tracking' },
+=======
 ]
 
 const STATS = [
   { value: 'Live', label: 'Bus tracking' },
   { value: 'ETA', label: 'Arrival estimates' },
   { value: '3', label: 'Student, driver & admin access' },
+>>>>>>> origin/dev/zain
   { value: '1990', label: 'UMT established' },
 ]
 
@@ -40,12 +66,21 @@ const FEATURES = [
   {
     Icon: Clock3,
     title: 'Arrival estimates',
+<<<<<<< HEAD
+    text: 'Get an estimated arrival time for your own stop, not just the route.',
+  },
+  {
+    Icon: Route,
+    title: 'Routes & stops',
+    text: 'Browse every campus route and its stops before you board.',
+=======
     text: 'Get an estimated arrival time for your own stop.',
   },
   {
     Icon: Users,
     title: 'One account per role',
     text: 'Separate, simple sign-in for students, drivers and the transport office.',
+>>>>>>> origin/dev/zain
   },
   {
     Icon: BellRing,
@@ -60,18 +95,31 @@ const FEATURES = [
   {
     Icon: ShieldCheck,
     title: 'Transport admin',
+<<<<<<< HEAD
+    text: 'The transport office manages fleet, routes and notices in one place.',
+=======
     text: 'The transport office manages the fleet and notices in one place.',
+>>>>>>> origin/dev/zain
   },
 ]
 
 const STEPS = [
   {
+<<<<<<< HEAD
+    title: 'Pick your route',
+    text: 'Choose the route and stop you ride from every day.',
+  },
+  {
+    title: 'Watch the bus live',
+    text: 'See where your bus is and how far it is from your stop.',
+=======
     title: 'Log in',
     text: 'Use your UMTGo account as a student or a driver.',
   },
   {
     title: 'Watch the bus live',
     text: 'See where your bus is and how far away it is.',
+>>>>>>> origin/dev/zain
   },
   {
     title: 'Arrive on time',
@@ -79,8 +127,25 @@ const STEPS = [
   },
 ]
 
+<<<<<<< HEAD
+const ROUTES = [
+  { name: 'Askari X', stops: 9, color: '#0f4c8a' },
+  { name: 'Badami Bagh', stops: 9, color: '#f2694a' },
+  { name: 'Bahria Town', stops: 7, color: '#1fa463' },
+  { name: 'Central Park Kahna', stops: 8, color: '#8e63c7' },
+  { name: 'Daroghawala', stops: 8, color: '#12a5b0' },
+  { name: 'DHA', stops: 9, color: '#d0344b' },
+  { name: 'Manawan', stops: 8, color: '#d09a0a' },
+  { name: 'Paragon City', stops: 8, color: '#0b6a99' },
+  { name: 'Shahdara', stops: 8, color: '#6b8e23' },
+]
+
+const TRACKING_POINTS = [
+  'See the bus position update along its route',
+=======
 const TRACKING_POINTS = [
   'See the bus position update in real time',
+>>>>>>> origin/dev/zain
   'Know how many stops away it is',
   'Get arrival estimates for your own stop',
 ]
@@ -218,7 +283,11 @@ function Hero() {
           </h1>
 
           <p>
+<<<<<<< HEAD
+            Live tracking, arrival estimates and every campus route in one place, so your
+=======
             Live tracking and arrival estimates in one place, so your
+>>>>>>> origin/dev/zain
             commute stops being a guessing game.
           </p>
 
@@ -238,7 +307,11 @@ function Hero() {
               <BusFront size={18} />
             </span>
             <div>
+<<<<<<< HEAD
+              <strong>Askari X</strong>
+=======
               <strong>Your bus</strong>
+>>>>>>> origin/dev/zain
               <span>6 min away</span>
             </div>
           </div>
@@ -284,7 +357,11 @@ function Tracking() {
           <span className="lp-kicker">Live tracking</span>
           <h2 className="lp-h2">See your bus move. Plan your minute.</h2>
           <p className="lp-lead">
+<<<<<<< HEAD
+            No more waiting at the stop wondering. UMTGo shows where your bus is on its route
+=======
             No more waiting at the stop wondering. UMTGo shows where your bus is right now
+>>>>>>> origin/dev/zain
             and when it should reach you.
           </p>
 
@@ -361,6 +438,79 @@ function HowItWorks() {
   )
 }
 
+<<<<<<< HEAD
+function Routes() {
+  return (
+    <section className="lp-section" id="routes">
+      <div className="lp-container">
+        <SectionHead
+          kicker="Routes"
+          title="Find your route"
+          text="Nine routes bring the city to the UMT campus. Log in to follow any of them live."
+        />
+
+        <div className="lp-route-grid">
+          {ROUTES.map((route, index) => (
+            <Link
+              key={route.name}
+              to="/login"
+              className="lp-route"
+              style={{ '--route': route.color, '--d': `${(index % 3) * 80}ms` }}
+              data-reveal
+            >
+              <div className="lp-route-top">
+                <span className="lp-route-bar" />
+                <ArrowUpRight size={18} className="lp-route-arrow" />
+              </div>
+              <span className="lp-route-no">ROUTE {String(index + 1).padStart(2, '0')}</span>
+              <h3>{route.name}</h3>
+              <div className="lp-route-meta">
+                <span>
+                  <MapPin size={15} /> {route.stops} stops
+                </span>
+                <span>
+                  <Navigation size={15} /> To UMT campus
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Campus() {
+  return (
+    <section className="lp-section lp-campus" id="campus">
+      <div className="lp-container">
+        <SectionHead
+          kicker="Our campus"
+          title="A campus worth arriving at"
+          text="From the main academic block to the open lawns, the journey ends somewhere you will want to be."
+        />
+
+        <div className="lp-gallery">
+          <figure className="lp-shot lp-shot-tall" data-reveal>
+            <img src={shuttle} alt="A blue UMT shuttle bus in front of the main academic block" loading="lazy" />
+            <figcaption>The UMT shuttle</figcaption>
+          </figure>
+          <figure className="lp-shot" data-reveal style={{ '--d': '100ms' }}>
+            <img src={lawn} alt="UMT campus lawn with academic blocks and flags" loading="lazy" />
+            <figcaption>Campus lawn</figcaption>
+          </figure>
+          <figure className="lp-shot" data-reveal style={{ '--d': '200ms' }}>
+            <img src={building} alt="UMT main building under a blue sky" loading="lazy" />
+            <figcaption>Main building</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+=======
+>>>>>>> origin/dev/zain
 function Vision() {
   return (
     <section className="lp-vision">
@@ -459,6 +609,11 @@ export default function Landing() {
         <Tracking />
         <Features />
         <HowItWorks />
+<<<<<<< HEAD
+        <Routes />
+        <Campus />
+=======
+>>>>>>> origin/dev/zain
         <Vision />
         <FinalCta />
       </main>

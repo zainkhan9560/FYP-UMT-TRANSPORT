@@ -1,10 +1,14 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 <<<<<<< HEAD
+import { ArrowRight } from 'lucide-react'
+=======
+<<<<<<< HEAD
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 =======
 import { ArrowRight, IdCard, Lock, Mail, User } from 'lucide-react'
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
 
 import AuthLayout from '../components/auth/AuthLayout.jsx'
 import AuthInput from '../components/auth/AuthInput.jsx'
@@ -21,6 +25,9 @@ const INITIAL_FORM = {
 
 function validate(form) {
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev/zain
   if (form.password.length < MIN_PASSWORD_LENGTH) {
     return `Password must contain at least ${MIN_PASSWORD_LENGTH} characters.`
   }
@@ -28,6 +35,8 @@ function validate(form) {
     return 'Your passwords do not match.'
   }
   return ''
+<<<<<<< HEAD
+=======
 =======
   const errors = {}
   if (form.password.length < MIN_PASSWORD_LENGTH) {
@@ -38,6 +47,7 @@ function validate(form) {
   }
   return errors
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
 }
 
 export default function Signup() {
@@ -46,8 +56,11 @@ export default function Signup() {
   const [message, setMessage] = useState('')
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
   const [errors, setErrors] = useState({})
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
 
   const isStudent = role === ROLES.STUDENT
 
@@ -56,14 +69,22 @@ export default function Signup() {
     setForm((previous) => ({ ...previous, [name]: value }))
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
     setErrors((previous) => ({ ...previous, [name]: undefined, ...(name === 'password' ? { confirmPassword: undefined } : {}) }))
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
     setMessage('')
   }
 
   function handleSubmit(event) {
     event.preventDefault()
 
+<<<<<<< HEAD
+    const validationError = validate(form)
+    if (validationError) {
+      setMessage(validationError)
+=======
 <<<<<<< HEAD
     const validationError = validate(form)
     if (validationError) {
@@ -77,6 +98,7 @@ export default function Signup() {
     if (Object.keys(validationErrors).length > 0) {
       setMessage('')
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
       return
     }
 
@@ -87,6 +109,13 @@ export default function Signup() {
 
   return (
     <AuthLayout mode="signup">
+<<<<<<< HEAD
+      <div className="form-heading">
+        <h2>Create account</h2>
+      </div>
+
+      <form onSubmit={handleSubmit}>
+=======
 <<<<<<< HEAD
       <Link to="/login" className="back-link">
         <ArrowLeft size={16} /> Back to sign in
@@ -107,6 +136,7 @@ export default function Signup() {
 
       <form onSubmit={handleSubmit} noValidate>
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
         <RoleSelector
           value={role}
           allowedRoles={SIGNUP_ROLES}
@@ -116,6 +146,8 @@ export default function Signup() {
           }}
         />
 
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
         <AuthInput
           id="signup-name"
@@ -142,11 +174,15 @@ export default function Signup() {
           required
         />
 =======
+>>>>>>> origin/dev/zain
         <div className="field-row">
           <AuthInput
             id="signup-name"
             label="Full name"
+<<<<<<< HEAD
+=======
             icon={User}
+>>>>>>> origin/dev/zain
             name="name"
             placeholder="Full name"
             value={form.name}
@@ -158,7 +194,10 @@ export default function Signup() {
           <AuthInput
             id="signup-identifier"
             label={isStudent ? 'Student ID' : 'Driver ID'}
+<<<<<<< HEAD
+=======
             icon={IdCard}
+>>>>>>> origin/dev/zain
             name="identifier"
             placeholder={isStudent ? 'Student ID' : 'Driver ID'}
             value={form.identifier}
@@ -166,15 +205,21 @@ export default function Signup() {
             required
           />
         </div>
+<<<<<<< HEAD
+=======
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
 
         <AuthInput
           id="signup-email"
           label="Email address"
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
           icon={Mail}
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
           name="email"
           type="email"
           placeholder="name@umt.edu.pk"
@@ -184,6 +229,8 @@ export default function Signup() {
           required
         />
 
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
         <AuthInput
           id="signup-password"
@@ -213,15 +260,22 @@ export default function Signup() {
 
         <button className="submit-button signup-submit" type="submit">
 =======
+>>>>>>> origin/dev/zain
         <div className="field-row">
           <AuthInput
             id="signup-password"
             label="Password"
+<<<<<<< HEAD
+            name="password"
+            type="password"
+            placeholder={`Min. ${MIN_PASSWORD_LENGTH} characters`}
+=======
             icon={Lock}
             error={errors.password}
             name="password"
             type="password"
             placeholder={`Min. ${MIN_PASSWORD_LENGTH} chars`}
+>>>>>>> origin/dev/zain
             value={form.password}
             onChange={updateField}
             autoComplete="new-password"
@@ -231,12 +285,19 @@ export default function Signup() {
 
           <AuthInput
             id="signup-confirm-password"
+<<<<<<< HEAD
+            label="Confirm"
+            name="confirmPassword"
+            type="password"
+            placeholder="Re-enter password"
+=======
             label="Confirm password"
             icon={Lock}
             error={errors.confirmPassword}
             name="confirmPassword"
             type="password"
             placeholder="Re-enter"
+>>>>>>> origin/dev/zain
             value={form.confirmPassword}
             onChange={updateField}
             autoComplete="new-password"
@@ -245,8 +306,12 @@ export default function Signup() {
           />
         </div>
 
+<<<<<<< HEAD
+        <button className="submit-button signup-submit" type="submit">
+=======
         <button className="submit-button" type="submit">
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
           Create account <ArrowRight size={18} />
         </button>
 
@@ -259,10 +324,14 @@ export default function Signup() {
 
       <p className="signup-prompt">
 <<<<<<< HEAD
+        Have an account? <Link to="/login">Log in</Link>
+=======
+<<<<<<< HEAD
         Already registered? <Link to="/login">Sign in</Link>
 =======
         Have an account? <Link to="/login">Log in</Link>
 >>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
       </p>
     </AuthLayout>
   )

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -24,6 +25,29 @@ dist-ssr
 *.sln
 *.sw?
 =======
+# Dependencies
+node_modules/
+
+# Build output
+frontend/dist/
+backend/dist/
+coverage/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+>>>>>>> dev/zain
+=======
 node_modules/
 dist/
 dist-ssr/
@@ -36,4 +60,8 @@ dist-ssr/
 .idea/
 .vscode/*
 !.vscode/extensions.json
+<<<<<<< HEAD
 >>>>>>> 92695f8c7e7ef7a0531c382aa7a202039ca2fa59
+=======
+>>>>>>> origin/dev/zain
+>>>>>>> dev/zain
