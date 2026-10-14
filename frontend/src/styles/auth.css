@@ -1,5 +1,11 @@
 /* ========================================
+<<<<<<< HEAD
    1. GLOBAL STYLES
+=======
+   UMTGo authentication pages
+   Login / Sign up / Forgot password
+   Every page fills exactly one screen (100dvh) and never scrolls.
+>>>>>>> 489011d (landing page added to the project)
 ======================================== */
 
 :root {
@@ -10,11 +16,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
   font-optical-sizing: auto;
+=======
+>>>>>>> 489011d (landing page added to the project)
 
   --auth-blue: #00307f;
   --auth-blue-dark: #00235c;
   --auth-blue-light: #eef3fc;
+<<<<<<< HEAD
   --auth-sky: #9ec5ff;
   --auth-text: #0f1c33;
   --auth-muted: #66748c;
@@ -85,12 +95,57 @@ input:focus-visible {
 /* ========================================
    3. LEFT VISUAL / BRANDING PANEL
 ======================================== */
+=======
+  --auth-border: #d5ddec;
+  --auth-muted: #66748c;
+
+  /* Sizes scale with screen height so the form always fits */
+  --ctl-h: clamp(38px, 5.4vh, 46px);
+  --gap: clamp(8px, 1.5vh, 14px);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; min-width: 320px; }
+body { margin: 0; background: #f4f7fc; }
+
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { touch-action: manipulation; }
+a { color: inherit; text-decoration: none; }
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 3px solid rgba(31, 95, 208, 0.35);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Page shell: fixed to the viewport ---------- */
+
+.auth-page {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #f4f7fc;
+}
+
+/* ---------- Left: campus photo panel ---------- */
+>>>>>>> 489011d (landing page added to the project)
 
 .auth-visual {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+<<<<<<< HEAD
   overflow: hidden;
   min-width: 0;
   min-height: 100vh;
@@ -969,6 +1024,25 @@ input:focus-visible {
 .auth-slide:first-child {
   opacity: 1;
 }
+=======
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  padding: clamp(20px, 4.5vh, 40px) clamp(28px, 4.5vw, 72px);
+  color: #fff;
+  background: var(--auth-blue-dark);
+}
+
+.auth-slides { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+
+.auth-slide {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0; transform: scale(1.02);
+  animation: slide-cycle 21s infinite;
+  animation-delay: calc(var(--slide-index, 0) * 7s);
+}
+.auth-slide:first-child { opacity: 1; }
+>>>>>>> 489011d (landing page added to the project)
 
 @keyframes slide-cycle {
   0% { opacity: 0; transform: scale(1.02); }
@@ -978,6 +1052,7 @@ input:focus-visible {
   100% { opacity: 0; transform: scale(1.08); }
 }
 
+<<<<<<< HEAD
 /* Blue brand overlay keeps text readable on every photo */
 .auth-visual::before {
   position: absolute;
@@ -1155,4 +1230,286 @@ input:focus-visible {
   .auth-slide:not(:first-child) {
     display: none;
   }
+=======
+.auth-visual::before {
+  position: absolute; inset: 0; z-index: 1; content: ''; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 26, 70, 0.8) 0%, rgba(0, 35, 92, 0.6) 40%, rgba(0, 24, 66, 0.92) 100%);
+}
+
+.brand {
+  position: relative; z-index: 3;
+  display: inline-flex; align-items: center; gap: 12px; width: fit-content;
+  font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 500; letter-spacing: -0.6px;
+}
+.brand strong { font-weight: 800; }
+.brand-icon {
+  display: grid; width: 48px; height: 48px; flex-shrink: 0; place-items: center;
+  overflow: hidden; border-radius: 50%; background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 20, 60, 0.3);
+}
+.brand-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.visual-content { position: relative; z-index: 3; width: 100%; max-width: 480px; margin: 0 auto; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  color: #9ec5ff; font-size: 11px; font-weight: 700; letter-spacing: 1.8px;
+}
+.live-dot {
+  width: 8px; height: 8px; flex-shrink: 0; border-radius: 50%;
+  background: #9ec5ff; box-shadow: 0 0 0 4px rgba(158, 197, 255, 0.14);
+}
+
+.visual-content h1 {
+  margin: clamp(10px, 2.2vh, 20px) 0 clamp(8px, 1.8vh, 16px);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(30px, min(4vw, 6.2vh), 54px);
+  font-weight: 800; line-height: 1.14; letter-spacing: -2px;
+}
+.visual-content h1 span { color: #9ec5ff; }
+
+.visual-content > p {
+  max-width: 400px; margin: 0 0 clamp(14px, 3vh, 28px);
+  color: rgba(255, 255, 255, 0.8); font-size: 15px; line-height: 1.7;
+}
+
+.feature-card {
+  display: flex; align-items: center; gap: 14px; margin-top: 10px; padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 14px;
+  background: rgba(255, 255, 255, 0.09); backdrop-filter: blur(12px);
+}
+.feature-icon {
+  display: grid; width: 40px; height: 40px; flex-shrink: 0; place-items: center;
+  border-radius: 11px; background: rgba(207, 226, 255, 0.16); color: #cfe2ff;
+}
+.feature-card > div:nth-child(2) { display: grid; min-width: 0; gap: 3px; }
+.feature-card strong { font-size: 13px; font-weight: 600; }
+.feature-card div span { color: rgba(255, 255, 255, 0.72); font-size: 12px; }
+
+.visual-footer {
+  position: relative; z-index: 3; display: flex; align-items: center; gap: 8px; margin: 0;
+  color: rgba(255, 255, 255, 0.7); font-size: 12px;
+}
+.visual-footer svg { flex-shrink: 0; color: #9ec5ff; }
+
+/* ---------- Right: form panel ---------- */
+
+.auth-panel {
+  display: flex; align-items: center; justify-content: center;
+  min-width: 0; height: 100%; padding: clamp(12px, 3vh, 32px) clamp(16px, 4vw, 56px);
+  background:
+    radial-gradient(circle at 85% 8%, rgba(0, 48, 127, 0.07), transparent 40%),
+    #f4f7fc;
+}
+
+.auth-card {
+  width: 100%; max-width: 440px; max-height: 100%;
+  overflow-y: auto; scrollbar-width: none;
+  padding: clamp(16px, 3.2vh, 30px) clamp(20px, 3vw, 34px) clamp(14px, 2.6vh, 24px);
+  border: 1px solid var(--auth-border); border-top: 4px solid var(--auth-blue);
+  border-radius: 14px; background: #fff;
+  box-shadow: 0 12px 36px rgba(0, 35, 92, 0.09);
+}
+.auth-card::-webkit-scrollbar { display: none; }
+.auth-signup .auth-card { max-width: 480px; }
+
+.card-logo {
+  display: block; width: clamp(48px, 10vh, 84px); height: clamp(48px, 10vh, 84px);
+  margin: 0 auto clamp(4px, 1vh, 10px); object-fit: contain;
+}
+
+.form-heading { margin-bottom: var(--gap); text-align: center; }
+.form-heading h2 {
+  margin: 0 0 4px; font-family: 'Manrope', sans-serif;
+  font-size: clamp(21px, 3.4vh, 27px); font-weight: 800; letter-spacing: -0.8px; line-height: 1.2;
+}
+.form-heading > p { margin: 0; color: var(--auth-muted); font-size: 13px; line-height: 1.5; }
+
+/* ---------- Role switch ---------- */
+
+.role-fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.role-selector {
+  display: grid; grid-template-columns: repeat(var(--role-count, 2), minmax(0, 1fr));
+  gap: 4px; padding: 4px; border-radius: 12px; background: #eef2f9;
+}
+.role-option {
+  display: flex; min-width: 0; height: clamp(34px, 4.6vh, 40px);
+  align-items: center; justify-content: center; gap: 8px;
+  border: 0; border-radius: 9px; background: transparent; color: #5a6a85;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.role-option svg { width: 17px; height: 17px; }
+.role-option:hover:not(:disabled):not(.selected) { color: var(--auth-blue); }
+.role-option.selected {
+  background: #fff; color: var(--auth-blue); box-shadow: 0 1px 4px rgba(0, 35, 92, 0.16);
+}
+.role-option:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ---------- Fields ---------- */
+
+.auth-field { min-width: 0; margin-top: var(--gap); }
+
+.field-label {
+  display: block; margin: 0 0 5px; color: #2b3a55; font-size: 12px; font-weight: 700;
+}
+
+.label-row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px; min-width: 0;
+}
+.label-row .field-label { flex-shrink: 0; }
+
+.field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
+
+.auth-input-wrap { position: relative; min-width: 0; }
+
+.auth-input {
+  display: block; width: 100%; min-width: 0; height: var(--ctl-h); padding: 0 12px;
+  border: 1px solid var(--auth-border); border-radius: 10px; outline: none;
+  background: #fff; color: #1b2a47; font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+.auth-input::placeholder { color: #9aa6bb; opacity: 1; }
+.auth-input:hover:not(:disabled) { border-color: #aebfdc; }
+.auth-input:focus { border-color: #1f5fd0; box-shadow: 0 0 0 3px rgba(31, 95, 208, 0.12); }
+.auth-input:disabled { background: #eef2f9; color: #7c8aa3; cursor: not-allowed; }
+.auth-input.has-icon { padding-left: 38px; }
+.auth-input.input-error { border-color: #dc4545; box-shadow: 0 0 0 3px rgba(220, 69, 69, 0.08); }
+
+.auth-input-icon {
+  position: absolute; top: 50%; left: 12px; display: flex; transform: translateY(-50%);
+  color: #7686a1; pointer-events: none;
+}
+.auth-input-wrap:focus-within .auth-input-icon { color: var(--auth-blue); }
+
+.auth-input-wrap:has(.password-toggle) .auth-input { padding-right: 42px; }
+.password-toggle {
+  position: absolute; top: 50%; right: 5px; display: grid; width: 32px; height: 32px;
+  transform: translateY(-50%); place-items: center; border: 0; border-radius: 8px;
+  background: transparent; color: #6b7a94; cursor: pointer;
+}
+.password-toggle:hover { background: var(--auth-blue-light); color: var(--auth-blue); }
+
+/* Errors sit in the label row, so they never change the form height */
+.input-error-text {
+  min-width: 0; overflow: hidden; color: #c53030; font-size: 11px; font-weight: 600;
+  text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ---------- Links, remember me ---------- */
+
+.text-link, .signup-prompt a { color: #0a3d9c; font-size: 12px; font-weight: 700; }
+.text-link:hover, .signup-prompt a:hover { text-decoration: underline; }
+
+.remember-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin: var(--gap) 0 0;
+}
+.remember-label {
+  display: inline-flex; align-items: center; gap: 8px; color: #5f6e88; font-size: 12px; cursor: pointer;
+}
+.remember-label input { width: 15px; height: 15px; margin: 0; accent-color: #0a3d9c; }
+
+/* ---------- Button + messages ---------- */
+
+.submit-button {
+  display: flex; width: 100%; height: var(--ctl-h); margin-top: calc(var(--gap) + 2px);
+  align-items: center; justify-content: center; gap: 10px; padding: 0 18px;
+  border: 0; border-radius: 10px; background: var(--auth-blue); color: #fff;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-1px); background: var(--auth-blue-dark);
+  box-shadow: 0 6px 16px rgba(0, 48, 127, 0.22);
+}
+.submit-button:active:not(:disabled) { transform: translateY(0); }
+.submit-button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.form-message {
+  margin: 10px 0 0; padding: 9px 12px; border: 1px solid #cfdcf3; border-radius: 9px;
+  background: var(--auth-blue-light); color: var(--auth-blue);
+  font-size: 12px; line-height: 1.5; overflow-wrap: anywhere;
+}
+
+.signup-prompt {
+  margin: clamp(10px, 2vh, 16px) 0 0; padding-top: clamp(8px, 1.6vh, 14px);
+  border-top: 1px solid #e8edf6; color: var(--auth-muted);
+  font-size: 12.5px; line-height: 1.5; text-align: center;
+}
+.back-link { display: inline-flex; align-items: center; gap: 6px; }
+
+/* ========================================
+   Tablets and phones: photo becomes the backdrop,
+   the form card floats over it, still one fixed screen.
+======================================== */
+
+@media (max-width: 900px) {
+  .auth-page { display: block; }
+
+  .auth-visual { position: absolute; inset: 0; padding: 0; }
+  .auth-visual > :not(.auth-slides) { display: none; }
+
+  .auth-panel {
+    position: relative; z-index: 2; background: transparent;
+    padding: clamp(10px, 2.5vh, 28px) 16px;
+  }
+  .auth-card { box-shadow: 0 18px 50px rgba(0, 20, 60, 0.35); border-color: transparent; border-top-color: var(--auth-blue); }
+}
+
+/* Short screens: tighten further so nothing needs scrolling */
+@media (max-height: 700px) {
+  .form-heading > p { display: none; }
+  .form-heading { margin-bottom: 6px; }
+  .signup-prompt { margin-top: 8px; padding-top: 8px; }
+}
+
+@media (max-height: 600px) {
+  .card-logo { display: none; }
+  .auth-card { padding-top: 14px; }
+}
+
+/* Phones in landscape */
+@media (max-height: 480px) {
+  :root { --ctl-h: 34px; --gap: 6px; }
+  .card-logo, .form-heading { display: none; }
+  .auth-panel { padding-top: 8px; padding-bottom: 8px; }
+  .auth-card { padding: 12px 20px 8px; }
+  .role-option { height: 30px; }
+  .field-label { margin-bottom: 3px; }
+  .signup-prompt { margin-top: 6px; padding-top: 6px; }
+}
+
+@media (max-height: 340px) {
+  :root { --ctl-h: 30px; --gap: 4px; }
+  .role-option { height: 26px; }
+  .auth-card { padding-top: 8px; }
+}
+
+/* Landscape phones: signup fields sit in two columns so the form still fits */
+@media (max-height: 480px) and (min-width: 560px) {
+  .auth-signup .auth-card { max-width: 600px; }
+  .auth-signup form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
+  .auth-signup .field-row { display: contents; }
+  .auth-signup .role-fieldset,
+  .auth-signup form > .auth-field,
+  .auth-signup .submit-button,
+  .auth-signup .form-message { grid-column: 1 / -1; }
+  .auth-signup .field-row .auth-field { grid-column: auto; }
+}
+
+@media (max-width: 380px) {
+  .auth-card { padding-right: 16px; padding-left: 16px; }
+  .field-row { gap: 0 8px; }
+  .role-option { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important; transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+  }
+  .auth-slide { animation: none !important; transform: none !important; }
+  .auth-slide:not(:first-child) { display: none; }
+>>>>>>> 489011d (landing page added to the project)
 }
