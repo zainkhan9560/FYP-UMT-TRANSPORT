@@ -14,6 +14,10 @@ export default function AuthInput({
   autoComplete,
   minLength,
   disabled = false,
+<<<<<<< HEAD
+=======
+  autoFocus = false,
+>>>>>>> 489011d (landing page added to the project)
   icon: Icon,
   error,
 }) {
@@ -27,12 +31,29 @@ export default function AuthInput({
     </label>
   )
 
+<<<<<<< HEAD
   return (
     <div className="auth-field">
       {labelAction ? (
         <div className="label-row">
           {labelElement}
           {labelAction}
+=======
+  const labelExtra = error ? (
+    <span id={`${id}-error`} className="input-error-text" role="alert">
+      {error}
+    </span>
+  ) : (
+    labelAction
+  )
+
+  return (
+    <div className="auth-field">
+      {labelExtra ? (
+        <div className="label-row">
+          {labelElement}
+          {labelExtra}
+>>>>>>> 489011d (landing page added to the project)
         </div>
       ) : (
         labelElement
@@ -41,7 +62,11 @@ export default function AuthInput({
       <div className="auth-input-wrap">
         {Icon && (
           <span className="auth-input-icon" aria-hidden="true">
+<<<<<<< HEAD
             <Icon size={18} />
+=======
+            <Icon size={17} />
+>>>>>>> 489011d (landing page added to the project)
           </span>
         )}
 
@@ -57,6 +82,10 @@ export default function AuthInput({
           autoComplete={autoComplete}
           minLength={minLength}
           disabled={disabled}
+<<<<<<< HEAD
+=======
+          autoFocus={autoFocus}
+>>>>>>> 489011d (landing page added to the project)
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${id}-error` : undefined}
         />
@@ -74,11 +103,14 @@ export default function AuthInput({
         )}
       </div>
 
+<<<<<<< HEAD
       {error && (
         <p id={`${id}-error`} className="input-error-text" role="alert">
           {error}
         </p>
       )}
+=======
+>>>>>>> 489011d (landing page added to the project)
     </div>
   )
 }

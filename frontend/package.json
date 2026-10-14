@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "umt-transit-frontend",
+=======
+  "name": "umtgo-frontend",
+>>>>>>> 489011d (landing page added to the project)
   "private": true,
   "version": "0.1.0",
   "type": "module",

@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom'
+<<<<<<< HEAD
 import { ArrowUpRight, Clock3, MapPin, Navigation } from 'lucide-react'
 
 import UmtLogo from '../brand/UmtLogo.jsx'
+=======
+import { Clock3, MapPin, Navigation } from 'lucide-react'
+
+import umtLogo from '../../assets/umt-logo.png'
+import umtSeal from '../../assets/umt-seal.png'
+>>>>>>> 489011d (landing page added to the project)
 import shuttle from '../../assets/campus/campus-shuttle.webp'
 import lawn from '../../assets/campus/campus-lawn.webp'
 import building from '../../assets/campus/campus-building.webp'
@@ -53,6 +60,7 @@ const SLIDE_ORDER = {
   recovery: ['building', 'shuttle', 'lawn'],
 }
 
+<<<<<<< HEAD
 function Brand({ className, logoSize }) {
   return (
     <Link to="/login" className={className}>
@@ -61,13 +69,26 @@ function Brand({ className, logoSize }) {
       </span>
       <span>
         UMT <strong>Transit</strong>
+=======
+function Brand() {
+  return (
+    <Link to="/" className="brand">
+      <span className="brand-icon">
+        <img src={umtSeal} alt="UMT seal" />
+      </span>
+      <span>
+        UMT<strong>Go</strong>
+>>>>>>> 489011d (landing page added to the project)
       </span>
     </Link>
   )
 }
 
 export default function AuthLayout({ children, mode = 'login' }) {
+<<<<<<< HEAD
   const isSignup = mode === 'signup'
+=======
+>>>>>>> 489011d (landing page added to the project)
   const slides = (SLIDE_ORDER[mode] ?? SLIDE_ORDER.login).map((key) => CAMPUS_PHOTOS[key])
 
   return (
@@ -87,7 +108,11 @@ export default function AuthLayout({ children, mode = 'login' }) {
           ))}
         </div>
 
+<<<<<<< HEAD
         <Brand className="brand" logoSize={46} />
+=======
+        <Brand />
+>>>>>>> 489011d (landing page added to the project)
 
         <div className="visual-content">
           <span className="eyebrow">
@@ -100,24 +125,38 @@ export default function AuthLayout({ children, mode = 'login' }) {
 
           <div className="feature-card">
             <div className="feature-icon">
+<<<<<<< HEAD
               <Navigation size={21} />
+=======
+              <Navigation size={20} />
+>>>>>>> 489011d (landing page added to the project)
             </div>
             <div>
               <strong>Live bus tracking</strong>
               <span>See your bus on the map</span>
             </div>
+<<<<<<< HEAD
             <ArrowUpRight className="feature-arrow" size={19} />
+=======
+>>>>>>> 489011d (landing page added to the project)
           </div>
 
           <div className="feature-card">
             <div className="feature-icon">
+<<<<<<< HEAD
               <Clock3 size={21} />
+=======
+              <Clock3 size={20} />
+>>>>>>> 489011d (landing page added to the project)
             </div>
             <div>
               <strong>Smarter arrival times</strong>
               <span>Get estimated arrival updates</span>
             </div>
+<<<<<<< HEAD
             <ArrowUpRight className="feature-arrow" size={19} />
+=======
+>>>>>>> 489011d (landing page added to the project)
           </div>
         </div>
 
@@ -128,6 +167,7 @@ export default function AuthLayout({ children, mode = 'login' }) {
       </aside>
 
       <section className="auth-panel">
+<<<<<<< HEAD
         <div className="mobile-hero" aria-hidden="true">
           <img src={shuttle} alt="" decoding="async" />
         </div>
@@ -140,6 +180,16 @@ export default function AuthLayout({ children, mode = 'login' }) {
           <p className="security-note">
             University transport access · Secure account required
           </p>
+=======
+        <div className="auth-card">
+          <img
+            className="card-logo"
+            src={umtLogo}
+            alt="University of Management and Technology, Estd. 1990"
+          />
+
+          {children}
+>>>>>>> 489011d (landing page added to the project)
         </div>
       </section>
     </main>
