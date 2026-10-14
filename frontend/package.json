@@ -1,7 +1,11 @@
 {
-  "name": "frontend",
+<<<<<<< HEAD
+  "name": "umt-transit-frontend",
+=======
+  "name": "umtgo-frontend",
+>>>>>>> 489011d (landing page added to the project)
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,12 +16,18 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.13.0",
     "@tailwindcss/vite": "^4.3.3",
+    "lucide-react": "^1.56.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-redux": "^9.3.0",
+<<<<<<< HEAD
     "tailwindcss": "^4.3.3",
     "lucide-react": "^1.56.0",
     "react-router-dom": "^7.18.4"
+=======
+    "react-router-dom": "^7.18.4",
+    "tailwindcss": "^4.3.3"
+>>>>>>> origin/dev/zain
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

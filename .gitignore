@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dependencies
 node_modules/
 
@@ -19,3 +20,17 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 .vscode/
+=======
+node_modules/
+dist/
+dist-ssr/
+*.local
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+>>>>>>> origin/dev/zain

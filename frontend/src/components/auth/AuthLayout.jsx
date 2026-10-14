@@ -1,8 +1,21 @@
 import { Link } from 'react-router-dom'
+<<<<<<< HEAD
 import { ArrowUpRight, Clock3, MapPin, Navigation } from 'lucide-react'
 
 import umtLogo from '../../assets/umt-logo.png'
 import umtSeal from '../../assets/umt-seal.png'
+=======
+<<<<<<< HEAD
+import { ArrowUpRight, Clock3, MapPin, Navigation } from 'lucide-react'
+
+import UmtLogo from '../brand/UmtLogo.jsx'
+=======
+import { Clock3, MapPin, Navigation } from 'lucide-react'
+
+import umtLogo from '../../assets/umt-logo.png'
+import umtSeal from '../../assets/umt-seal.png'
+>>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
 import shuttle from '../../assets/campus/campus-shuttle.webp'
 import lawn from '../../assets/campus/campus-lawn.webp'
 import building from '../../assets/campus/campus-building.webp'
@@ -54,6 +67,19 @@ const SLIDE_ORDER = {
   recovery: ['building', 'shuttle', 'lawn'],
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+function Brand({ className, logoSize }) {
+  return (
+    <Link to="/login" className={className}>
+      <span className="brand-icon">
+        <UmtLogo size={logoSize} />
+      </span>
+      <span>
+        UMT <strong>Transit</strong>
+=======
+>>>>>>> origin/dev/zain
 function Brand() {
   return (
     <Link to="/" className="brand">
@@ -62,13 +88,24 @@ function Brand() {
       </span>
       <span>
         UMT<strong>Go</strong>
+<<<<<<< HEAD
+=======
+>>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
       </span>
     </Link>
   )
 }
 
 export default function AuthLayout({ children, mode = 'login' }) {
+<<<<<<< HEAD
   const isSignup = mode === 'signup'
+=======
+<<<<<<< HEAD
+  const isSignup = mode === 'signup'
+=======
+>>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
   const slides = (SLIDE_ORDER[mode] ?? SLIDE_ORDER.login).map((key) => CAMPUS_PHOTOS[key])
 
   return (
@@ -88,7 +125,15 @@ export default function AuthLayout({ children, mode = 'login' }) {
           ))}
         </div>
 
+<<<<<<< HEAD
         <Brand />
+=======
+<<<<<<< HEAD
+        <Brand className="brand" logoSize={46} />
+=======
+        <Brand />
+>>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
 
         <div className="visual-content">
           <span className="eyebrow">
@@ -101,24 +146,54 @@ export default function AuthLayout({ children, mode = 'login' }) {
 
           <div className="feature-card">
             <div className="feature-icon">
+<<<<<<< HEAD
               <Navigation size={21} />
+=======
+<<<<<<< HEAD
+              <Navigation size={21} />
+=======
+              <Navigation size={20} />
+>>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
             </div>
             <div>
               <strong>Live bus tracking</strong>
               <span>See your bus on the map</span>
             </div>
+<<<<<<< HEAD
             <ArrowUpRight className="feature-arrow" size={19} />
+=======
+<<<<<<< HEAD
+            <ArrowUpRight className="feature-arrow" size={19} />
+=======
+>>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
           </div>
 
           <div className="feature-card">
             <div className="feature-icon">
+<<<<<<< HEAD
               <Clock3 size={21} />
+=======
+<<<<<<< HEAD
+              <Clock3 size={21} />
+=======
+              <Clock3 size={20} />
+>>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
             </div>
             <div>
               <strong>Smarter arrival times</strong>
               <span>Get estimated arrival updates</span>
             </div>
+<<<<<<< HEAD
             <ArrowUpRight className="feature-arrow" size={19} />
+=======
+<<<<<<< HEAD
+            <ArrowUpRight className="feature-arrow" size={19} />
+=======
+>>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
           </div>
         </div>
 
@@ -129,18 +204,40 @@ export default function AuthLayout({ children, mode = 'login' }) {
       </aside>
 
       <section className="auth-panel">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/dev/zain
         <div className="mobile-hero" aria-hidden="true">
           <img src={shuttle} alt="" decoding="async" />
         </div>
 
         <div className={`auth-form-wrap ${isSignup ? 'signup-form-wrap' : ''}`}>
+<<<<<<< HEAD
           <img
             className="form-logo"
+=======
+          <Brand className="mobile-brand" logoSize={40} />
+
+          {children}
+
+          <p className="security-note">
+            University transport access · Secure account required
+          </p>
+=======
+        <div className="auth-card">
+          <img
+            className="card-logo"
+>>>>>>> origin/dev/zain
             src={umtLogo}
             alt="University of Management and Technology, Estd. 1990"
           />
 
           {children}
+<<<<<<< HEAD
+=======
+>>>>>>> 489011d (landing page added to the project)
+>>>>>>> origin/dev/zain
         </div>
       </section>
     </main>

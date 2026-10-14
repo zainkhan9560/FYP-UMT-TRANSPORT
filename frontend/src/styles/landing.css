@@ -848,6 +848,7 @@
   line-height: 1.7;
 }
 
+<<<<<<< HEAD
 /* ---------- Routes ---------- */
 
 .lp-route-grid {
@@ -1001,6 +1002,8 @@
   font-weight: 800;
 }
 
+=======
+>>>>>>> origin/dev/zain
 /* ---------- Vision band ---------- */
 
 .lp-vision {
@@ -1219,8 +1222,12 @@
     grid-template-columns: 1fr;
   }
 
+<<<<<<< HEAD
   .lp-feature-grid,
   .lp-route-grid {
+=======
+  .lp-feature-grid {
+>>>>>>> origin/dev/zain
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1281,6 +1288,7 @@
     display: none;
   }
 
+<<<<<<< HEAD
   .lp-gallery {
     grid-template-columns: 1fr;
     grid-template-rows: none;
@@ -1293,6 +1301,8 @@
     height: 260px;
   }
 
+=======
+>>>>>>> origin/dev/zain
   .lp-cta {
     grid-template-columns: 1fr;
   }
@@ -1303,8 +1313,12 @@
 }
 
 @media (max-width: 560px) {
+<<<<<<< HEAD
   .lp-feature-grid,
   .lp-route-grid {
+=======
+  .lp-feature-grid {
+>>>>>>> origin/dev/zain
     grid-template-columns: 1fr;
   }
 
