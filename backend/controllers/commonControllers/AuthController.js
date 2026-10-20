@@ -53,7 +53,7 @@ const signup = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-        const normalizedEmail = email.trim().toLowerCase();
+    const normalizedEmail = email.trim().toLowerCase();
 
 
     const existingUser = await User.findOne({ email: normalizedEmail }).select("+password");
@@ -71,6 +71,7 @@ const login = async (req, res) => {
     if (!isPassEqual) {
       return res.status(403).json({ success: false, message: errorMSG });
     }
+    
 if (!process.env.JWT_SECRET) {
   throw new Error("JWT_SECRET is missing from .env");
 }
