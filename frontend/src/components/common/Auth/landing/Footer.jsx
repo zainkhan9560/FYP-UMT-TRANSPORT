@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, BusFront } from 'lucide-react'
-import { navigationLinks } from '../../data/landingData'
-
+import { navigationLinks } from "../../../../data/landingData";
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-950 px-4 text-slate-300 sm:px-6 lg:px-8">

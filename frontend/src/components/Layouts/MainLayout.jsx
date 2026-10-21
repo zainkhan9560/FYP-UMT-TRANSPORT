@@ -1,5 +1,5 @@
-import Navbar from '../landing/Navbar'
-import Footer from '../landing/Footer'
+import Navbar from "../common/Auth/landing/Navbar";
+import Footer from "../common/Auth/landing/Footer";
 
 export default function MainLayout({ children }) {
   return (
@@ -8,5 +8,5 @@ export default function MainLayout({ children }) {
       <main>{children}</main>
       <Footer />
     </div>
-  )
+  );
 }

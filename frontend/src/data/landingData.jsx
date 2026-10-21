@@ -84,3 +84,23 @@ export const navigationLinks = [
   { label: 'How it works', to: '#how-it-works' },
   { label: 'Routes', to: '#routes' },
 ]
+
+export const stats = [
+  {
+    value: "6+",
+    label: "Transport Routes",
+  },
+  {
+    value: "24/7",
+    label: "Transport Access",
+  },
+  {
+    value: "Live",
+    label: "Bus Tracking",
+  },
+  {
+    value: "3",
+    label: "User Roles",
+  },
+];
+

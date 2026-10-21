@@ -1,46 +1,44 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight, LockKeyhole, Mail } from 'lucide-react'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, LockKeyhole, Mail } from "lucide-react";
 
-import AuthLayout from '../../components/layout/AuthLayout'
-import AuthInput from '../../components/auth/AuthInput'
-import RoleSelector from '../../components/auth/RoleSelector'
-import { LOGIN_ROLES, ROLES } from '../../utils/constants'
+import AuthLayout from "../../components/Layouts/AuthLayout";
+import AuthInput from "../../components/common/Auth/AuthInput";
+import RoleSelector from "../../components/common/Auth/RoleSelector";
+import { LOGIN_ROLES, ROLES } from "../../utils/constants";
 
 export default function Login() {
   const [form, setForm] = useState({
-    identifier: '',
-    password: '',
+    identifier: "",
+    password: "",
     role: ROLES.STUDENT,
     remember: true,
-  })
+  });
 
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState("");
 
   function handleChange(event) {
-    const { name, value, type, checked } = event.target
+    const { name, value, type, checked } = event.target;
 
     setForm((previous) => ({
       ...previous,
-      [name]: type === 'checkbox' ? checked : value,
-    }))
+      [name]: type === "checkbox" ? checked : value,
+    }));
 
-    setMessage('')
+    setMessage("");
   }
 
   function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
     setMessage(
-      'Frontend demo only. Connect the login form to your backend API to authenticate users.',
-    )
+      "Frontend demo only. Connect the login form to your backend API to authenticate users.",
+    );
   }
 
   return (
     <AuthLayout mode="login">
       <div>
-        <p className="text-sm font-semibold text-blue-600">
-          Welcome back
-        </p>
+        <p className="text-sm font-semibold text-blue-600">Welcome back</p>
 
         <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900">
           Sign in to UMTGo
@@ -55,8 +53,8 @@ export default function Login() {
         <RoleSelector
           value={form.role}
           onChange={(role) => {
-            setForm((previous) => ({ ...previous, role }))
-            setMessage('')
+            setForm((previous) => ({ ...previous, role }));
+            setMessage("");
           }}
           allowedRoles={LOGIN_ROLES}
         />
@@ -126,7 +124,7 @@ export default function Login() {
       </form>
 
       <p className="mt-7 text-center text-sm text-slate-600">
-        Don't have an account?{' '}
+        Don't have an account?{" "}
         <Link
           to="/signup"
           className="font-bold text-blue-600 hover:text-blue-800"
@@ -135,5 +133,5 @@ export default function Login() {
         </Link>
       </p>
     </AuthLayout>
-  )
+  );
 }

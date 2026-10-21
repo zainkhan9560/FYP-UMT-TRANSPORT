@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import { ArrowUpRight, MapPin } from 'lucide-react'
-import { routes } from '../../data/landingData'
+import { Link } from "react-router-dom";
+import { ArrowUpRight, MapPin } from "lucide-react";
+import { routes } from "../../../../data/landingData";
 
 export default function RoutesSection() {
   return (
@@ -47,7 +47,7 @@ export default function RoutesSection() {
                 </span>
 
                 <span className="text-xs font-bold tracking-wider text-slate-400">
-                  ROUTE {String(index + 1).padStart(2, '0')}
+                  ROUTE {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
 
@@ -56,9 +56,7 @@ export default function RoutesSection() {
               </h3>
 
               <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
-                <span className="text-sm text-slate-500">
-                  {route.stops}
-                </span>
+                <span className="text-sm text-slate-500">{route.stops}</span>
 
                 <ArrowUpRight
                   size={19}
@@ -70,10 +68,10 @@ export default function RoutesSection() {
         </div>
 
         <p className="mt-6 text-xs leading-6 text-slate-500">
-          Sample routes for demonstration only. Actual availability,
-          stops, and route details must come from the transport database.
+          Sample routes for demonstration only. Actual availability, stops, and
+          route details must come from the transport database.
         </p>
       </div>
     </section>
-  )
+  );
 }
