@@ -1,27 +1,10 @@
-export const ROLES = {
-  USER: "user",
-  STUDENT: "student",
-  DRIVER: "driver",
-  ADMIN: "admin",
-};
+export const ROLES = Object.freeze({
+  STUDENT: 'student',
+  DRIVER: 'driver',
+  ADMIN: 'admin',
+})
 
-export const SIGNUP_ROLES = [
-  {
-    label: "Student",
-    value: ROLES.STUDENT,
-  },
-  {
-    label: "Driver",
-    value: ROLES.DRIVER,
-  },
-];
-export const LOGIN_ROLES = [
-  {
-    label: "Student",
-    value: ROLES.STUDENT,
-  },
-  {
-    label: "Driver",
-    value: ROLES.DRIVER,
-  },
-];
+/** Roles that may self-register. Admin accounts are provisioned server-side only. */
+export const SIGNUP_ROLES = Object.freeze([ROLES.STUDENT, ROLES.DRIVER])
+
+export const MIN_PASSWORD_LENGTH = 8

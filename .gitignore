@@ -1,24 +1,26 @@
 # Dependencies
 node_modules/
 
-# Environment variables and secrets
+# Build output
+dist/
+dist-ssr/
+coverage/
+
+# Environment secrets
 .env
 .env.*
 !.env.example
 
-# Build files
-dist/
-build/
-
 # Logs
 *.log
+npm-debug.log*
 
-# Python, if your backend uses Python
-__pycache__/
-.venv/
-venv/
-
-# Editor and operating system files
-.vscode/
+# OS / editor
 .DS_Store
 Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Old files kept for review only
+_archive/
