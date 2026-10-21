@@ -1,4 +1,4 @@
-import { stats } from '../../data/landingData'
+import { stats } from "../../../../data/landingData";
 
 export default function StatsSection() {
   return (

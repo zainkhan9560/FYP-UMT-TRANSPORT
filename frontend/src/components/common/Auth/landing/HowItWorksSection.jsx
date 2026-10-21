@@ -1,5 +1,5 @@
-import { ArrowRight } from 'lucide-react'
-import { steps } from '../../data/landingData'
+import { ArrowRight } from "lucide-react";
+import { steps } from "../../../../data/landingData";
 
 export default function HowItWorksSection() {
   return (
@@ -18,8 +18,8 @@ export default function HowItWorksSection() {
           </h2>
 
           <p className="mt-4 leading-7 text-slate-600">
-            The goal is to make everyday university transport easier
-            to understand and plan.
+            The goal is to make everyday university transport easier to
+            understand and plan.
           </p>
         </div>
 
@@ -54,5 +54,5 @@ export default function HowItWorksSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

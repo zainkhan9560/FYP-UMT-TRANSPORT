@@ -1,28 +1,28 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowLeft, Mail, Send } from 'lucide-react'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowLeft, Mail, Send } from "lucide-react";
 
-import AuthLayout from '../../components/layout/AuthLayout'
-import AuthInput from '../../components/auth/AuthInput'
+import AuthLayout from "../../components/Layouts/AuthLayout";
+import AuthInput from "../../components/common/Auth/AuthInput";
 
 export default function ForgotPassword() {
-  const [email, setEmail] = useState('')
-  const [error, setError] = useState('')
-  const [message, setMessage] = useState('')
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   function handleSubmit(event) {
-    event.preventDefault()
-    setError('')
-    setMessage('')
+    event.preventDefault();
+    setError("");
+    setMessage("");
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError('Please enter a valid email address.')
-      return
+      setError("Please enter a valid email address.");
+      return;
     }
 
     setMessage(
-      'Your email is valid. Connect this form to your backend password-reset endpoint to send a recovery email.',
-    )
+      "Your email is valid. Connect this form to your backend password-reset endpoint to send a recovery email.",
+    );
   }
 
   return (
@@ -36,17 +36,15 @@ export default function ForgotPassword() {
           Back to login
         </Link>
 
-        <p className="text-sm font-semibold text-blue-600">
-          Account recovery
-        </p>
+        <p className="text-sm font-semibold text-blue-600">Account recovery</p>
 
         <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900">
           Forgot your password?
         </h2>
 
         <p className="mt-3 text-sm leading-7 text-slate-500">
-          Enter the email address associated with your account to
-          start the password recovery process.
+          Enter the email address associated with your account to start the
+          password recovery process.
         </p>
       </div>
 
@@ -59,9 +57,9 @@ export default function ForgotPassword() {
           placeholder="you@example.com"
           value={email}
           onChange={(event) => {
-            setEmail(event.target.value)
-            setError('')
-            setMessage('')
+            setEmail(event.target.value);
+            setError("");
+            setMessage("");
           }}
           icon={Mail}
           autoComplete="email"
@@ -88,7 +86,7 @@ export default function ForgotPassword() {
       </form>
 
       <p className="mt-7 text-center text-sm text-slate-600">
-        Remember your password?{' '}
+        Remember your password?{" "}
         <Link
           to="/login"
           className="font-bold text-blue-600 hover:text-blue-800"
@@ -97,5 +95,5 @@ export default function ForgotPassword() {
         </Link>
       </p>
     </AuthLayout>
-  )
+  );
 }

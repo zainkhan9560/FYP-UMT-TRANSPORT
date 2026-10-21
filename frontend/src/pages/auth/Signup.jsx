@@ -7,9 +7,9 @@ import {
   UserRound,
 } from 'lucide-react'
 
-import AuthLayout from '../../components/layout/AuthLayout'
-import AuthInput from '../../components/auth/AuthInput'
-import RoleSelector from '../../components/auth/RoleSelector'
+import AuthLayout from "../../components/Layouts/AuthLayout";
+import AuthInput from "../../components/common/Auth/AuthInput";
+import RoleSelector from "../../components/common/Auth/RoleSelector";
 import { ROLES, SIGNUP_ROLES } from '../../utils/constants'
 
 export default function Signup() {
