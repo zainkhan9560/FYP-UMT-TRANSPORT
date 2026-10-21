@@ -1,36 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-=======
 # Dependencies
 node_modules/
 
 # Build output
-frontend/dist/
-backend/dist/
+dist/
+dist-ssr/
 coverage/
 
 # Environment secrets
@@ -42,26 +15,12 @@ coverage/
 *.log
 npm-debug.log*
 
-# OS/editor
+# OS / editor
 .DS_Store
 Thumbs.db
-.vscode/
->>>>>>> dev/zain
-=======
-node_modules/
-dist/
-dist-ssr/
-*.local
-*.log
-.env
-.env.*
-!.env.example
-.DS_Store
 .idea/
 .vscode/*
 !.vscode/extensions.json
-<<<<<<< HEAD
->>>>>>> 92695f8c7e7ef7a0531c382aa7a202039ca2fa59
-=======
->>>>>>> origin/dev/zain
->>>>>>> dev/zain
+
+# Old files kept for review only
+_archive/

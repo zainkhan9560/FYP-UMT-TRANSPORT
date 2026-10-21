@@ -14,13 +14,6 @@ export default function AuthInput({
   autoComplete,
   minLength,
   disabled = false,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-  autoFocus = false,
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
   icon: Icon,
   error,
 }) {
@@ -34,35 +27,12 @@ export default function AuthInput({
     </label>
   )
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/dev/zain
   return (
     <div className="auth-field">
       {labelAction ? (
         <div className="label-row">
           {labelElement}
           {labelAction}
-<<<<<<< HEAD
-=======
-=======
-  const labelExtra = error ? (
-    <span id={`${id}-error`} className="input-error-text" role="alert">
-      {error}
-    </span>
-  ) : (
-    labelAction
-  )
-
-  return (
-    <div className="auth-field">
-      {labelExtra ? (
-        <div className="label-row">
-          {labelElement}
-          {labelExtra}
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
         </div>
       ) : (
         labelElement
@@ -71,15 +41,7 @@ export default function AuthInput({
       <div className="auth-input-wrap">
         {Icon && (
           <span className="auth-input-icon" aria-hidden="true">
-<<<<<<< HEAD
             <Icon size={18} />
-=======
-<<<<<<< HEAD
-            <Icon size={18} />
-=======
-            <Icon size={17} />
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
           </span>
         )}
 
@@ -95,13 +57,6 @@ export default function AuthInput({
           autoComplete={autoComplete}
           minLength={minLength}
           disabled={disabled}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-          autoFocus={autoFocus}
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
           aria-invalid={Boolean(error)}
           aria-describedby={error ? `${id}-error` : undefined}
         />
@@ -119,20 +74,11 @@ export default function AuthInput({
         )}
       </div>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/dev/zain
       {error && (
         <p id={`${id}-error`} className="input-error-text" role="alert">
           {error}
         </p>
       )}
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
     </div>
   )
 }

@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, Mail } from 'lucide-react'
 
-import AuthLayout from '../components/auth/AuthLayout.jsx'
-import AuthInput from '../components/auth/AuthInput.jsx'
+import AuthLayout from '../../components/auth/AuthLayout.jsx'
+import AuthInput from '../../components/auth/AuthInput.jsx'
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('')

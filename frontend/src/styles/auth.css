@@ -1,15 +1,5 @@
 /* ========================================
-<<<<<<< HEAD
    1. GLOBAL STYLES
-=======
-<<<<<<< HEAD
-   1. GLOBAL STYLES
-=======
-   UMTGo authentication pages
-   Login / Sign up / Forgot password
-   Every page fills exactly one screen (100dvh) and never scrolls.
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
 ======================================== */
 
 :root {
@@ -20,22 +10,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-<<<<<<< HEAD
   font-optical-sizing: auto;
-=======
-<<<<<<< HEAD
-  font-optical-sizing: auto;
-=======
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
 
   --auth-blue: #00307f;
   --auth-blue-dark: #00235c;
   --auth-blue-light: #eef3fc;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/dev/zain
   --auth-sky: #9ec5ff;
   --auth-text: #0f1c33;
   --auth-muted: #66748c;
@@ -106,63 +85,12 @@ input:focus-visible {
 /* ========================================
    3. LEFT VISUAL / BRANDING PANEL
 ======================================== */
-<<<<<<< HEAD
-=======
-=======
-  --auth-border: #d5ddec;
-  --auth-muted: #66748c;
-
-  /* Sizes scale with screen height so the form always fits */
-  --ctl-h: clamp(38px, 5.4vh, 46px);
-  --gap: clamp(8px, 1.5vh, 14px);
-}
-
-* { box-sizing: border-box; }
-
-html, body, #root { height: 100%; min-width: 320px; }
-body { margin: 0; background: #f4f7fc; }
-
-button, input { font: inherit; }
-button, a { -webkit-tap-highlight-color: transparent; }
-button { touch-action: manipulation; }
-a { color: inherit; text-decoration: none; }
-
-button:focus-visible, a:focus-visible, input:focus-visible {
-  outline: 3px solid rgba(31, 95, 208, 0.35);
-  outline-offset: 2px;
-}
-
-.sr-only {
-  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
-  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
-}
-
-/* ---------- Page shell: fixed to the viewport ---------- */
-
-.auth-page {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  width: 100%;
-  height: 100vh;
-  height: 100dvh;
-  overflow: hidden;
-  background: #f4f7fc;
-}
-
-/* ---------- Left: campus photo panel ---------- */
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
 
 .auth-visual {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/dev/zain
   overflow: hidden;
   min-width: 0;
   min-height: 100vh;
@@ -1041,28 +969,6 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 .auth-slide:first-child {
   opacity: 1;
 }
-<<<<<<< HEAD
-=======
-=======
-  min-width: 0;
-  height: 100%;
-  overflow: hidden;
-  padding: clamp(20px, 4.5vh, 40px) clamp(28px, 4.5vw, 72px);
-  color: #fff;
-  background: var(--auth-blue-dark);
-}
-
-.auth-slides { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-
-.auth-slide {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; opacity: 0; transform: scale(1.02);
-  animation: slide-cycle 21s infinite;
-  animation-delay: calc(var(--slide-index, 0) * 7s);
-}
-.auth-slide:first-child { opacity: 1; }
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
 
 @keyframes slide-cycle {
   0% { opacity: 0; transform: scale(1.02); }
@@ -1072,10 +978,6 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   100% { opacity: 0; transform: scale(1.08); }
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> origin/dev/zain
 /* Blue brand overlay keeps text readable on every photo */
 .auth-visual::before {
   position: absolute;
@@ -1091,14 +993,6 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   z-index: 2;
 }
 
-<<<<<<< HEAD
-=======
-.umt-logo {
-  display: block;
-  filter: drop-shadow(0 2px 6px rgba(0, 20, 60, 0.25));
-}
-
->>>>>>> origin/dev/zain
 .visual-footer svg {
   flex-shrink: 0;
   color: #9ec5ff;
@@ -1125,69 +1019,6 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   padding: 32px 34px 26px;
 }
 
-<<<<<<< HEAD
-=======
-.first-time {
-  margin-top: 26px;
-  padding: 16px 18px;
-  border: 1px solid #cfdcf3;
-  border-radius: 10px;
-  background: #eef3fc;
-  text-align: left;
-}
-
-.first-time h3 {
-  margin: 0 0 4px;
-  color: #00307f;
-  font-family: 'Manrope', sans-serif;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.first-time p {
-  margin: 0 0 12px;
-  color: #5a6a85;
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-.first-time a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 38px;
-  padding: 0 16px;
-  border: 1px solid #00307f;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #00307f;
-  font-size: 12px;
-  font-weight: 700;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.first-time a:hover {
-  background: #00307f;
-  color: #ffffff;
-}
-
-.help-note {
-  margin: 18px 0 0;
-  color: #7c8aa3;
-  font-size: 11px;
-  line-height: 1.7;
-  text-align: center;
-}
-
-.help-note a {
-  color: #0a3d9c;
-  font-weight: 700;
-}
-
-.help-note a:hover {
-  text-decoration: underline;
-}
-
->>>>>>> origin/dev/zain
 .mobile-hero {
   display: none;
 }
@@ -1259,7 +1090,6 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   .auth-slide:not(:first-child) {
     display: none;
   }
-<<<<<<< HEAD
 }
 
 
@@ -1281,8 +1111,8 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 /* Left panel: the seal alone (cropped from the official logo), circular */
 .brand-icon {
-  width: 56px;
-  height: 56px;
+  width: 75px;
+  height: 75px;
   overflow: hidden;
   border-radius: 50%;
   background: #ffffff;
@@ -1366,288 +1196,567 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 /* Even vertical rhythm on the signup form */
 .signup-form-wrap .auth-field > .field-label {
   margin-top: 0;
-=======
-=======
-.auth-visual::before {
-  position: absolute; inset: 0; z-index: 1; content: ''; pointer-events: none;
-  background: linear-gradient(180deg, rgba(0, 26, 70, 0.8) 0%, rgba(0, 35, 92, 0.6) 40%, rgba(0, 24, 66, 0.92) 100%);
+}
+/* ========================================
+   26. FIT-TO-SCREEN: login / signup / recovery never scroll
+======================================== */
+
+.auth-page {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
 }
 
-.brand {
-  position: relative; z-index: 3;
-  display: inline-flex; align-items: center; gap: 12px; width: fit-content;
-  font-family: 'Manrope', sans-serif; font-size: 21px; font-weight: 500; letter-spacing: -0.6px;
+.auth-visual {
+  height: 100%;
+  min-height: 0;
+  padding-block: clamp(18px, 4dvh, 36px);
 }
-.brand strong { font-weight: 800; }
-.brand-icon {
-  display: grid; width: 48px; height: 48px; flex-shrink: 0; place-items: center;
-  overflow: hidden; border-radius: 50%; background: #fff;
-  box-shadow: 0 4px 14px rgba(0, 20, 60, 0.3);
-}
-.brand-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-.visual-content { position: relative; z-index: 3; width: 100%; max-width: 480px; margin: 0 auto; }
-
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 9px;
-  color: #9ec5ff; font-size: 11px; font-weight: 700; letter-spacing: 1.8px;
-}
-.live-dot {
-  width: 8px; height: 8px; flex-shrink: 0; border-radius: 50%;
-  background: #9ec5ff; box-shadow: 0 0 0 4px rgba(158, 197, 255, 0.14);
-}
-
-.visual-content h1 {
-  margin: clamp(10px, 2.2vh, 20px) 0 clamp(8px, 1.8vh, 16px);
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(30px, min(4vw, 6.2vh), 54px);
-  font-weight: 800; line-height: 1.14; letter-spacing: -2px;
-}
-.visual-content h1 span { color: #9ec5ff; }
-
-.visual-content > p {
-  max-width: 400px; margin: 0 0 clamp(14px, 3vh, 28px);
-  color: rgba(255, 255, 255, 0.8); font-size: 15px; line-height: 1.7;
-}
-
-.feature-card {
-  display: flex; align-items: center; gap: 14px; margin-top: 10px; padding: 12px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 14px;
-  background: rgba(255, 255, 255, 0.09); backdrop-filter: blur(12px);
-}
-.feature-icon {
-  display: grid; width: 40px; height: 40px; flex-shrink: 0; place-items: center;
-  border-radius: 11px; background: rgba(207, 226, 255, 0.16); color: #cfe2ff;
-}
-.feature-card > div:nth-child(2) { display: grid; min-width: 0; gap: 3px; }
-.feature-card strong { font-size: 13px; font-weight: 600; }
-.feature-card div span { color: rgba(255, 255, 255, 0.72); font-size: 12px; }
-
-.visual-footer {
-  position: relative; z-index: 3; display: flex; align-items: center; gap: 8px; margin: 0;
-  color: rgba(255, 255, 255, 0.7); font-size: 12px;
-}
-.visual-footer svg { flex-shrink: 0; color: #9ec5ff; }
-
-/* ---------- Right: form panel ---------- */
 
 .auth-panel {
-  display: flex; align-items: center; justify-content: center;
-  min-width: 0; height: 100%; padding: clamp(12px, 3vh, 32px) clamp(16px, 4vw, 56px);
-  background:
-    radial-gradient(circle at 85% 8%, rgba(0, 48, 127, 0.07), transparent 40%),
-    #f4f7fc;
+  height: 100%;
+  min-height: 0;
+  padding: clamp(10px, 2.5dvh, 32px) clamp(16px, 4vw, 64px);
+  overflow: hidden;
 }
 
-.auth-card {
-  width: 100%; max-width: 440px; max-height: 100%;
-  overflow-y: auto; scrollbar-width: none;
-  padding: clamp(16px, 3.2vh, 30px) clamp(20px, 3vw, 34px) clamp(14px, 2.6vh, 24px);
-  border: 1px solid var(--auth-border); border-top: 4px solid var(--auth-blue);
-  border-radius: 14px; background: #fff;
-  box-shadow: 0 12px 36px rgba(0, 35, 92, 0.09);
-}
-.auth-card::-webkit-scrollbar { display: none; }
-.auth-signup .auth-card { max-width: 480px; }
-
-.card-logo {
-  display: block; width: clamp(48px, 10vh, 84px); height: clamp(48px, 10vh, 84px);
-  margin: 0 auto clamp(4px, 1vh, 10px); object-fit: contain;
+.auth-form-wrap {
+  margin: 0;
+  padding: clamp(14px, 3dvh, 28px) clamp(18px, 2.4vw, 34px) clamp(12px, 2.6dvh, 24px);
 }
 
-.form-heading { margin-bottom: var(--gap); text-align: center; }
+.form-logo {
+  width: clamp(44px, 10dvh, 92px);
+  height: clamp(44px, 10dvh, 92px);
+  margin: 0 auto clamp(4px, 1dvh, 12px);
+}
+
+.form-heading {
+  margin-bottom: clamp(8px, 1.8dvh, 18px);
+}
+
 .form-heading h2 {
-  margin: 0 0 4px; font-family: 'Manrope', sans-serif;
-  font-size: clamp(21px, 3.4vh, 27px); font-weight: 800; letter-spacing: -0.8px; line-height: 1.2;
-}
-.form-heading > p { margin: 0; color: var(--auth-muted); font-size: 13px; line-height: 1.5; }
-
-/* ---------- Role switch ---------- */
-
-.role-fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
-.role-selector {
-  display: grid; grid-template-columns: repeat(var(--role-count, 2), minmax(0, 1fr));
-  gap: 4px; padding: 4px; border-radius: 12px; background: #eef2f9;
-}
-.role-option {
-  display: flex; min-width: 0; height: clamp(34px, 4.6vh, 40px);
-  align-items: center; justify-content: center; gap: 8px;
-  border: 0; border-radius: 9px; background: transparent; color: #5a6a85;
-  font-size: 13px; font-weight: 600; cursor: pointer;
-  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-}
-.role-option svg { width: 17px; height: 17px; }
-.role-option:hover:not(:disabled):not(.selected) { color: var(--auth-blue); }
-.role-option.selected {
-  background: #fff; color: var(--auth-blue); box-shadow: 0 1px 4px rgba(0, 35, 92, 0.16);
-}
-.role-option:disabled { opacity: 0.55; cursor: not-allowed; }
-
-/* ---------- Fields ---------- */
-
-.auth-field { min-width: 0; margin-top: var(--gap); }
-
-.field-label {
-  display: block; margin: 0 0 5px; color: #2b3a55; font-size: 12px; font-weight: 700;
+  margin: 0 0 4px;
+  font-size: clamp(20px, 3.4dvh, 28px);
+  line-height: 1.2;
 }
 
+.form-heading > p {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.auth-field {
+  margin-top: clamp(6px, 1.6dvh, 14px);
+}
+
+.field-label,
+.label-row .field-label {
+  margin-bottom: clamp(4px, 0.8dvh, 7px);
+}
+
+.auth-field > .label-row,
 .label-row {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 8px; min-width: 0;
+  margin-top: 0;
 }
-.label-row .field-label { flex-shrink: 0; }
-
-.field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
-
-.auth-input-wrap { position: relative; min-width: 0; }
 
 .auth-input {
-  display: block; width: 100%; min-width: 0; height: var(--ctl-h); padding: 0 12px;
-  border: 1px solid var(--auth-border); border-radius: 10px; outline: none;
-  background: #fff; color: #1b2a47; font-size: 14px;
-  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  height: clamp(38px, 5.6dvh, 46px);
 }
-.auth-input::placeholder { color: #9aa6bb; opacity: 1; }
-.auth-input:hover:not(:disabled) { border-color: #aebfdc; }
-.auth-input:focus { border-color: #1f5fd0; box-shadow: 0 0 0 3px rgba(31, 95, 208, 0.12); }
-.auth-input:disabled { background: #eef2f9; color: #7c8aa3; cursor: not-allowed; }
-.auth-input.has-icon { padding-left: 38px; }
-.auth-input.input-error { border-color: #dc4545; box-shadow: 0 0 0 3px rgba(220, 69, 69, 0.08); }
-
-.auth-input-icon {
-  position: absolute; top: 50%; left: 12px; display: flex; transform: translateY(-50%);
-  color: #7686a1; pointer-events: none;
-}
-.auth-input-wrap:focus-within .auth-input-icon { color: var(--auth-blue); }
-
-.auth-input-wrap:has(.password-toggle) .auth-input { padding-right: 42px; }
-.password-toggle {
-  position: absolute; top: 50%; right: 5px; display: grid; width: 32px; height: 32px;
-  transform: translateY(-50%); place-items: center; border: 0; border-radius: 8px;
-  background: transparent; color: #6b7a94; cursor: pointer;
-}
-.password-toggle:hover { background: var(--auth-blue-light); color: var(--auth-blue); }
-
-/* Errors sit in the label row, so they never change the form height */
-.input-error-text {
-  min-width: 0; overflow: hidden; color: #c53030; font-size: 11px; font-weight: 600;
-  text-overflow: ellipsis; white-space: nowrap;
-}
-
-/* ---------- Links, remember me ---------- */
-
-.text-link, .signup-prompt a { color: #0a3d9c; font-size: 12px; font-weight: 700; }
-.text-link:hover, .signup-prompt a:hover { text-decoration: underline; }
-
-.remember-row {
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  margin: var(--gap) 0 0;
-}
-.remember-label {
-  display: inline-flex; align-items: center; gap: 8px; color: #5f6e88; font-size: 12px; cursor: pointer;
-}
-.remember-label input { width: 15px; height: 15px; margin: 0; accent-color: #0a3d9c; }
-
-/* ---------- Button + messages ---------- */
 
 .submit-button {
-  display: flex; width: 100%; height: var(--ctl-h); margin-top: calc(var(--gap) + 2px);
-  align-items: center; justify-content: center; gap: 10px; padding: 0 18px;
-  border: 0; border-radius: 10px; background: var(--auth-blue); color: #fff;
-  font-size: 14px; font-weight: 700; cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  min-height: clamp(40px, 5.8dvh, 48px);
+  padding-block: 8px;
 }
-.submit-button:hover:not(:disabled) {
-  transform: translateY(-1px); background: var(--auth-blue-dark);
-  box-shadow: 0 6px 16px rgba(0, 48, 127, 0.22);
-}
-.submit-button:active:not(:disabled) { transform: translateY(0); }
-.submit-button:disabled { opacity: 0.5; cursor: not-allowed; }
 
-.form-message {
-  margin: 10px 0 0; padding: 9px 12px; border: 1px solid #cfdcf3; border-radius: 9px;
-  background: var(--auth-blue-light); color: var(--auth-blue);
-  font-size: 12px; line-height: 1.5; overflow-wrap: anywhere;
+.remember-row {
+  margin: clamp(8px, 1.6dvh, 14px) 0 clamp(10px, 2dvh, 18px);
+}
+
+.signup-submit,
+.recovery-submit {
+  margin-top: clamp(12px, 2.4dvh, 22px);
 }
 
 .signup-prompt {
-  margin: clamp(10px, 2vh, 16px) 0 0; padding-top: clamp(8px, 1.6vh, 14px);
-  border-top: 1px solid #e8edf6; color: var(--auth-muted);
-  font-size: 12.5px; line-height: 1.5; text-align: center;
+  margin-top: clamp(10px, 2dvh, 18px);
 }
-.back-link { display: inline-flex; align-items: center; gap: 6px; }
 
-/* ========================================
-   Tablets and phones: photo becomes the backdrop,
-   the form card floats over it, still one fixed screen.
-======================================== */
+.form-message {
+  margin-top: 10px;
+  padding: 8px 12px;
+  line-height: 1.4;
+}
 
-@media (max-width: 900px) {
-  .auth-page { display: block; }
+.back-link {
+  margin-bottom: clamp(6px, 1.4dvh, 14px);
+}
 
-  .auth-visual { position: absolute; inset: 0; padding: 0; }
-  .auth-visual > :not(.auth-slides) { display: none; }
+/* Left photo panel scales with height too */
+.visual-content h1 {
+  font-size: clamp(26px, 5.4dvh, 46px);
+}
+
+.visual-content > p {
+  margin-top: clamp(8px, 1.6dvh, 16px);
+  font-size: clamp(13px, 1.9dvh, 15px);
+  line-height: 1.5;
+}
+
+.feature-card {
+  margin-top: clamp(8px, 1.4dvh, 12px);
+}
+
+/* Short screens: drop the nice-to-haves */
+@media (max-height: 760px) {
+  .feature-card {
+    display: none;
+  }
+}
+
+@media (max-height: 700px) {
+  .form-heading > p {
+    display: none;
+  }
+}
+
+/* Phones and small tablets: card only, with a slim photo banner when there is room */
+@media (max-width: 680px) {
+  .auth-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .auth-visual {
+    display: none;
+  }
 
   .auth-panel {
-    position: relative; z-index: 2; background: transparent;
-    padding: clamp(10px, 2.5vh, 28px) 16px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0;
   }
-  .auth-card { box-shadow: 0 18px 50px rgba(0, 20, 60, 0.35); border-color: transparent; border-top-color: var(--auth-blue); }
+
+  .mobile-hero {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 64px;
+    max-height: 240px;
+  }
+
+  .auth-form-wrap,
+  .auth-recovery .auth-form-wrap {
+    width: auto;
+    max-width: 440px;
+    margin: -22px 14px 12px;
+    padding: clamp(12px, 2.4dvh, 22px) 18px clamp(12px, 2.2dvh, 20px);
+  }
+
+  .auth-form-wrap {
+    align-self: center;
+    width: calc(100% - 28px);
+  }
 }
 
-/* Short screens: tighten further so nothing needs scrolling */
-@media (max-height: 700px) {
-  .form-heading > p { display: none; }
-  .form-heading { margin-bottom: 6px; }
-  .signup-prompt { margin-top: 8px; padding-top: 8px; }
+@media (max-width: 680px) and (max-height: 640px) {
+  .mobile-hero {
+    display: none;
+  }
+
+  .auth-form-wrap,
+  .auth-recovery .auth-form-wrap {
+    margin: 10px 14px;
+  }
 }
 
+/* Keep name/ID and password/confirm side by side on narrow phones */
+@media (max-width: 420px) {
+  .field-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 8px;
+  }
+}
+
+@media (max-width: 340px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Very short screens: drop the card logo to keep everything on one screen */
 @media (max-height: 600px) {
-  .card-logo { display: none; }
-  .auth-card { padding-top: 14px; }
-}
-
-/* Phones in landscape */
-@media (max-height: 480px) {
-  :root { --ctl-h: 34px; --gap: 6px; }
-  .card-logo, .form-heading { display: none; }
-  .auth-panel { padding-top: 8px; padding-bottom: 8px; }
-  .auth-card { padding: 12px 20px 8px; }
-  .role-option { height: 30px; }
-  .field-label { margin-bottom: 3px; }
-  .signup-prompt { margin-top: 6px; padding-top: 6px; }
-}
-
-@media (max-height: 340px) {
-  :root { --ctl-h: 30px; --gap: 4px; }
-  .role-option { height: 26px; }
-  .auth-card { padding-top: 8px; }
-}
-
-/* Landscape phones: signup fields sit in two columns so the form still fits */
-@media (max-height: 480px) and (min-width: 560px) {
-  .auth-signup .auth-card { max-width: 600px; }
-  .auth-signup form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
-  .auth-signup .field-row { display: contents; }
-  .auth-signup .role-fieldset,
-  .auth-signup form > .auth-field,
-  .auth-signup .submit-button,
-  .auth-signup .form-message { grid-column: 1 / -1; }
-  .auth-signup .field-row .auth-field { grid-column: auto; }
-}
-
-@media (max-width: 380px) {
-  .auth-card { padding-right: 16px; padding-left: 16px; }
-  .field-row { gap: 0 8px; }
-  .role-option { font-size: 12px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important; transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+  .form-logo {
+    display: none;
   }
-  .auth-slide { animation: none !important; transform: none !important; }
-  .auth-slide:not(:first-child) { display: none; }
->>>>>>> 489011d (landing page added to the project)
->>>>>>> origin/dev/zain
 }
+
+/* Phone in landscape: fall back to scrolling rather than clipping the form */
+@media (max-height: 520px) {
+  .auth-page {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .auth-visual,
+  .auth-panel {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+}
+
+/* ========================================
+   27. UPDATED AUTH FORM SIZING
+   Slightly larger cards and text for Login,
+   Signup, and Forgot Password.
+   Keep this section at the end of the file.
+======================================== */
+
+.auth-panel {
+  padding: clamp(12px, 2.5dvh, 30px) clamp(18px, 3vw, 48px);
+}
+
+.auth-form-wrap,
+.auth-recovery .auth-form-wrap {
+  width: 100%;
+  max-width: 480px;
+  padding: clamp(18px, 2.8dvh, 30px) clamp(22px, 2.6vw, 38px)
+    clamp(16px, 2.4dvh, 26px);
+}
+
+.signup-form-wrap {
+  max-width: 520px;
+  padding: clamp(16px, 2.3dvh, 25px) clamp(22px, 2.6vw, 38px)
+    clamp(14px, 2dvh, 22px);
+}
+
+.form-logo {
+  width: clamp(64px, 9dvh, 100px);
+  height: clamp(64px, 9dvh, 100px);
+  margin: 0 auto clamp(6px, 1dvh, 12px);
+}
+
+.form-heading {
+  margin-bottom: clamp(12px, 1.8dvh, 20px);
+}
+
+.form-heading h2 {
+  margin: 0 0 7px;
+  font-size: clamp(25px, 3.7dvh, 32px);
+  line-height: 1.22;
+  letter-spacing: -0.8px;
+}
+
+.form-heading > p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.form-kicker {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+}
+
+.field-label,
+.label-row .field-label {
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.auth-field {
+  margin-top: clamp(9px, 1.6dvh, 16px);
+}
+
+.auth-input {
+  height: clamp(44px, 5.8dvh, 51px);
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 14px;
+  border-radius: 11px;
+}
+
+.auth-input.has-icon {
+  padding-left: 44px;
+}
+
+.auth-input-icon {
+  left: 15px;
+}
+
+.role-fieldset .field-label {
+  margin-bottom: 8px;
+}
+
+.role-selector {
+  gap: 10px;
+}
+
+.role-option,
+.signup-form-wrap .role-option {
+  min-height: 54px;
+  padding: 10px 7px;
+  gap: 9px;
+  border-radius: 11px;
+}
+
+.role-option span {
+  font-size: 13px;
+}
+
+.text-link,
+.signup-prompt a {
+  font-size: 13px;
+}
+
+.remember-label {
+  gap: 9px;
+  font-size: 13px;
+}
+
+.remember-label input {
+  width: 16px;
+  height: 16px;
+}
+
+.role-hint {
+  font-size: 12px;
+}
+
+.submit-button {
+  min-height: clamp(45px, 5.9dvh, 52px);
+  padding: 11px 18px;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+.signup-submit,
+.recovery-submit {
+  margin-top: clamp(14px, 2dvh, 22px);
+}
+
+.form-message,
+.role-notice {
+  font-size: 13px;
+  padding: 10px 13px;
+  line-height: 1.5;
+}
+
+.signup-prompt {
+  margin-top: clamp(12px, 1.8dvh, 18px);
+  font-size: 13px;
+}
+
+.security-note {
+  margin-top: clamp(12px, 1.8dvh, 20px);
+  font-size: 12px;
+}
+
+.back-link {
+  margin-bottom: clamp(10px, 1.7dvh, 18px);
+  font-size: 13px;
+}
+
+.recovery-icon {
+  width: 62px;
+  height: 62px;
+  margin: 18px 0 18px;
+}
+
+/* Signup has more fields, so keep its vertical rhythm compact. */
+.signup-form-wrap .form-heading {
+  margin-bottom: clamp(10px, 1.5dvh, 16px);
+}
+
+.signup-form-wrap .auth-field {
+  margin-top: clamp(8px, 1.3dvh, 13px);
+}
+
+.signup-form-wrap .field-label {
+  margin-top: 12px;
+}
+
+.signup-form-wrap .role-option {
+  min-height: 48px;
+}
+
+.signup-form-wrap .submit-button {
+  margin-top: clamp(12px, 1.8dvh, 19px);
+}
+
+.signup-form-wrap .security-note {
+  margin-top: 12px;
+}
+
+/* Branding panel text is also slightly easier to read. */
+.brand,
+.mobile-brand {
+  font-size: 22px;
+}
+
+.eyebrow {
+  font-size: 12px;
+}
+
+.feature-card strong {
+  font-size: 14px;
+}
+
+.feature-card div span {
+  font-size: 13px;
+}
+
+/* Tablet and compact desktop */
+@media (max-width: 1100px) {
+  .auth-form-wrap,
+  .auth-recovery .auth-form-wrap {
+    max-width: 460px;
+    padding-right: 26px;
+    padding-left: 26px;
+  }
+
+  .signup-form-wrap {
+    max-width: 490px;
+  }
+}
+
+/* Mobile: retain the photo banner and enlarge the card within the screen. */
+@media (max-width: 680px) {
+  .auth-panel {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  .mobile-hero {
+    flex: 0 0 auto;
+    height: clamp(90px, 18dvh, 170px);
+    min-height: 0;
+  }
+
+  .auth-form-wrap,
+  .auth-recovery .auth-form-wrap,
+  .signup-form-wrap {
+    width: calc(100% - 28px);
+    max-width: 500px;
+    align-self: center;
+    margin: -22px 14px 18px;
+    padding: 22px clamp(18px, 5vw, 28px) 22px;
+  }
+
+  .form-logo {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 8px;
+  }
+
+  .form-heading h2 {
+    font-size: clamp(25px, 6vw, 30px);
+  }
+
+  .form-heading > p {
+    font-size: 14px;
+  }
+
+  .auth-input {
+    height: 48px;
+    font-size: 14px;
+  }
+
+  .field-label,
+  .label-row .field-label {
+    font-size: 13px;
+  }
+
+  .submit-button {
+    min-height: 48px;
+    font-size: 14px;
+  }
+
+  .signup-form-wrap .auth-field {
+    margin-top: 10px;
+  }
+
+  .signup-form-wrap .field-label {
+    margin-top: 10px;
+  }
+
+  .mobile-brand {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .auth-form-wrap,
+  .auth-recovery .auth-form-wrap,
+  .signup-form-wrap {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .role-selector {
+    gap: 6px;
+  }
+
+  .role-option span {
+    font-size: 12px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Short desktop windows: allow the panel to scroll instead of clipping fields. */
+@media (max-height: 760px) and (min-width: 681px) {
+  .auth-page {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .auth-panel {
+    overflow-y: auto;
+    align-items: center;
+  }
+
+  .form-logo {
+    width: 62px;
+    height: 62px;
+  }
+
+  .form-heading h2 {
+    font-size: 25px;
+  }
+
+  .signup-form-wrap {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+@media (max-height: 520px) and (min-width: 681px) {
+  .auth-page {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .auth-panel {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+}
+
