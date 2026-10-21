@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BusFront, Menu, X } from 'lucide-react'
-import { navigationLinks } from '../../data/landingData'
+import { navigationLinks } from "../../../../data/landingData";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)

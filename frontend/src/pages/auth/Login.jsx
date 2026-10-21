@@ -1,138 +1,83 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, LockKeyhole, Mail } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
-import AuthLayout from '../../components/layout/AuthLayout'
-import AuthInput from '../../components/auth/AuthInput'
-import RoleSelector from '../../components/auth/RoleSelector'
-import { LOGIN_ROLES, ROLES } from '../../utils/constants'
+import AuthLayout from '../../components/auth/AuthLayout.jsx'
+import AuthInput from '../../components/auth/AuthInput.jsx'
 
 export default function Login() {
-  const [form, setForm] = useState({
-    identifier: '',
-    password: '',
-    role: ROLES.STUDENT,
-    remember: true,
-  })
-
+  const [identifier, setIdentifier] = useState('')
+  const [password, setPassword] = useState('')
+  const [remember, setRemember] = useState(false)
   const [message, setMessage] = useState('')
-
-  function handleChange(event) {
-    const { name, value, type, checked } = event.target
-
-    setForm((previous) => ({
-      ...previous,
-      [name]: type === 'checkbox' ? checked : value,
-    }))
-
-    setMessage('')
-  }
 
   function handleSubmit(event) {
     event.preventDefault()
-    setMessage(
-      'Frontend demo only. Connect the login form to your backend API to authenticate users.',
-    )
+    // Backend integration point: send { identifier: identifier.trim(), password, remember }.
+    // The server decides the role (student, driver or admin) from the account.
+    setMessage('Login UI is ready. Connect your backend to authenticate.')
   }
 
   return (
     <AuthLayout mode="login">
-      <div>
-        <p className="text-sm font-semibold text-blue-600">
-          Welcome back
-        </p>
-
-        <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900">
-          Sign in to UMTGo
-        </h2>
-
-        <p className="mt-3 text-sm leading-6 text-slate-500">
-          Access your transport dashboard and journey information.
-        </p>
+      <div className="form-heading">
+        <h2>Log in</h2>
+        <p>Access your UMTGo account.</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-        <RoleSelector
-          value={form.role}
-          onChange={(role) => {
-            setForm((previous) => ({ ...previous, role }))
-            setMessage('')
-          }}
-          allowedRoles={LOGIN_ROLES}
-        />
-
+      <form onSubmit={handleSubmit}>
         <AuthInput
-          id="identifier"
-          name="identifier"
+          id="login-identifier"
           label="Email or university ID"
-          type="text"
-          placeholder="Enter your email or university ID"
-          value={form.identifier}
-          onChange={handleChange}
-          icon={Mail}
+          name="identifier"
+          placeholder="Email or university ID"
+          value={identifier}
+          onChange={(event) => setIdentifier(event.target.value)}
           autoComplete="username"
           required
         />
 
         <AuthInput
-          id="password"
-          name="password"
+          id="login-password"
           label="Password"
+          labelAction={
+            <Link className="text-link" to="/forgot-password">
+              Forgot password?
+            </Link>
+          }
+          name="password"
           type="password"
-          placeholder="Enter your password"
-          value={form.password}
-          onChange={handleChange}
-          icon={LockKeyhole}
+          placeholder="Password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
           autoComplete="current-password"
           required
         />
 
-        <div className="flex items-center justify-between gap-3">
-          <label className="flex items-center gap-2 text-sm text-slate-600">
+        <div className="remember-row">
+          <label className="remember-label">
             <input
               type="checkbox"
-              name="remember"
-              checked={form.remember}
-              onChange={handleChange}
-              className="h-4 w-4 rounded border-slate-300 accent-blue-600"
+              checked={remember}
+              onChange={(event) => setRemember(event.target.checked)}
             />
-            Remember me
+            <span>Remember me</span>
           </label>
-
-          <Link
-            to="/forgot-password"
-            className="text-sm font-semibold text-blue-600 hover:text-blue-800"
-          >
-            Forgot password?
-          </Link>
         </div>
 
+        <button className="submit-button" type="submit">
+          Log in <ArrowRight size={18} />
+        </button>
+
         {message && (
-          <p
-            role="status"
-            className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm leading-6 text-amber-800"
-          >
+          <p className="form-message" role="status">
             {message}
           </p>
         )}
-
-        <button
-          type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-        >
-          Sign in
-          <ArrowRight size={18} />
-        </button>
       </form>
 
-      <p className="mt-7 text-center text-sm text-slate-600">
-        Don't have an account?{' '}
-        <Link
-          to="/signup"
-          className="font-bold text-blue-600 hover:text-blue-800"
-        >
-          Create one
-        </Link>
+      <p className="signup-prompt">
+        New here? <Link to="/signup">Create an account</Link>
       </p>
     </AuthLayout>
   )

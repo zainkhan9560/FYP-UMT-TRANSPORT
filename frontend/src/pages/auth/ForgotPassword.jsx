@@ -1,101 +1,61 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Mail, Send } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Mail } from 'lucide-react'
 
-import AuthLayout from '../../components/layout/AuthLayout'
-import AuthInput from '../../components/auth/AuthInput'
+import AuthLayout from '../../components/auth/AuthLayout.jsx'
+import AuthInput from '../../components/auth/AuthInput.jsx'
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('')
-  const [error, setError] = useState('')
   const [message, setMessage] = useState('')
 
   function handleSubmit(event) {
     event.preventDefault()
-    setError('')
-    setMessage('')
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError('Please enter a valid email address.')
-      return
-    }
-
+    // Backend integration point: POST { email: email.trim() }.
+    // Always show the same response so the form cannot be used to discover registered emails.
     setMessage(
-      'Your email is valid. Connect this form to your backend password-reset endpoint to send a recovery email.',
+      'If an account exists for this email, a reset link will be sent.',
     )
   }
 
   return (
     <AuthLayout mode="recovery">
-      <div>
-        <Link
-          to="/login"
-          className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-blue-600"
-        >
-          <ArrowLeft size={17} />
-          Back to login
-        </Link>
+      <Link to="/login" className="back-link">
+        <ArrowLeft size={16} /> Back to sign in
+      </Link>
 
-        <p className="text-sm font-semibold text-blue-600">
-          Account recovery
-        </p>
-
-        <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900">
-          Forgot your password?
-        </h2>
-
-        <p className="mt-3 text-sm leading-7 text-slate-500">
-          Enter the email address associated with your account to
-          start the password recovery process.
-        </p>
+      <div className="form-heading">
+        <h2>Reset password</h2>
+        <p>Enter your email and we will send a reset link.</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+      <form onSubmit={handleSubmit}>
         <AuthInput
-          id="email"
-          name="email"
+          id="recovery-email"
           label="Email address"
+          name="email"
           type="email"
-          placeholder="you@example.com"
+          placeholder="name@umt.edu.pk"
           value={email}
           onChange={(event) => {
             setEmail(event.target.value)
-            setError('')
             setMessage('')
           }}
-          icon={Mail}
           autoComplete="email"
-          error={error}
+          icon={Mail}
           required
         />
 
+        <button className="submit-button recovery-submit" type="submit">
+          Send reset link <ArrowRight size={18} />
+        </button>
+
         {message && (
-          <p
-            role="status"
-            className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm leading-6 text-amber-800"
-          >
+          <p className="form-message" role="status">
             {message}
           </p>
         )}
-
-        <button
-          type="submit"
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700"
-        >
-          <Send size={17} />
-          Continue
-        </button>
       </form>
-
-      <p className="mt-7 text-center text-sm text-slate-600">
-        Remember your password?{' '}
-        <Link
-          to="/login"
-          className="font-bold text-blue-600 hover:text-blue-800"
-        >
-          Sign in
-        </Link>
-      </p>
     </AuthLayout>
   )
 }
