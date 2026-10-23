@@ -1,21 +1,41 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
-import AuthLayout from '../../components/auth/AuthLayout.jsx'
-import AuthInput from '../../components/auth/AuthInput.jsx'
+import AuthLayout from "../../components/auth/AuthLayout.jsx";
+import AuthInput from "../../components/auth/AuthInput.jsx";
+
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser, clearAuthError } from "../../redux/slices/authSlice.js";
 
 export default function Login() {
-  const [identifier, setIdentifier] = useState('')
-  const [password, setPassword] = useState('')
-  const [remember, setRemember] = useState(false)
-  const [message, setMessage] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    // Backend integration point: send { identifier: identifier.trim(), password, remember }.
-    // The server decides the role (student, driver or admin) from the account.
-    setMessage('Login UI is ready. Connect your backend to authenticate.')
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.auth);
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    dispatch(clearAuthError());
+
+    try {
+      const user = await dispatch(
+        loginUser({
+          email: email.trim(),
+          password,
+        }),
+      ).unwrap();
+
+      console.log("Login successful:", user);
+
+      // Redirect after login when your routes are ready.
+      // Example: navigate("/");
+    } catch (errorMessage) {
+      console.error("Login failed:", errorMessage);
+    }
   }
 
   return (
@@ -27,12 +47,16 @@ export default function Login() {
 
       <form onSubmit={handleSubmit}>
         <AuthInput
-          id="login-identifier"
-          label="Email or university ID"
-          name="identifier"
-          placeholder="Email or university ID"
-          value={identifier}
-          onChange={(event) => setIdentifier(event.target.value)}
+          id="login-email"
+          label="Email address"
+          name="email"
+          type="email"
+          placeholder="name@umt.edu.pk"
+          value={email}
+          onChange={(event) => {
+            setEmail(event.target.value);
+            dispatch(clearAuthError());
+          }}
           autoComplete="username"
           required
         />
@@ -65,13 +89,16 @@ export default function Login() {
           </label>
         </div>
 
-        <button className="submit-button" type="submit">
-          Log in <ArrowRight size={18} />
+        <button className="submit-button" type="submit" disabled={loading}>
+          {loading ? "Logging in..." : "Log in"}
+          {!loading && <ArrowRight size={18} />}
         </button>
 
-        {message && (
-          <p className="form-message" role="status">
-            {message}
+        {error && (
+          <p className="form-message" role="alert">
+            {typeof error === "string"
+              ? error
+              : "Login failed. Please try again."}
           </p>
         )}
       </form>
@@ -80,5 +107,5 @@ export default function Login() {
         New here? <Link to="/signup">Create an account</Link>
       </p>
     </AuthLayout>
-  )
+  );
 }
