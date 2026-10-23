@@ -1,51 +1,84 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
-import AuthLayout from '../../components/auth/AuthLayout.jsx'
-import AuthInput from '../../components/auth/AuthInput.jsx'
-import { MIN_PASSWORD_LENGTH } from '../../utils/constants.js'
+import AuthLayout from "../../components/auth/AuthLayout.jsx";
+import AuthInput from "../../components/auth/AuthInput.jsx";
+import { MIN_PASSWORD_LENGTH } from "../../utils/constants.js";
+
+import {
+  signupUser,
+  clearAuthError,
+  resetSignupSuccess,
+} from "../../redux/slices/authSlice.js";
+import { useDispatch, useSelector } from "react-redux";
 
 const INITIAL_FORM = {
-  name: '',
-  identifier: '',
-  email: '',
-  password: '',
-  confirmPassword: '',
-}
+  name: "",
+  identifier: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 
 function validate(form) {
   if (form.password.length < MIN_PASSWORD_LENGTH) {
-    return `Password must contain at least ${MIN_PASSWORD_LENGTH} characters.`
+    return `Password must contain at least ${MIN_PASSWORD_LENGTH} characters.`;
   }
   if (form.password !== form.confirmPassword) {
-    return 'Your passwords do not match.'
+    return "Your passwords do not match.";
   }
-  return ''
+  return "";
 }
 
 export default function Signup() {
-  const [form, setForm] = useState(INITIAL_FORM)
-  const [message, setMessage] = useState('')
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [message, setMessage] = useState("");
+
+  const dispatch = useDispatch();
+
+  const { loading, error, signupSuccess } = useSelector((state) => state.auth);
 
   function updateField(event) {
-    const { name, value } = event.target
-    setForm((previous) => ({ ...previous, [name]: value }))
-    setMessage('')
+    const { name, value } = event.target;
+
+    setForm((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+
+    setMessage("");
+    dispatch(clearAuthError());
+    dispatch(resetSignupSuccess());
   }
 
-  function handleSubmit(event) {
-    event.preventDefault()
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setMessage("");
 
-    const validationError = validate(form)
+    const validationError = validate(form);
+
     if (validationError) {
-      setMessage(validationError)
-      return
+      setMessage(validationError);
+      return;
     }
 
-    // Backend integration point: POST { role: 'student', ...form } (omit confirmPassword).
-    // The server must independently reject privileged roles and re-validate all input.
-    setMessage('Form validated. Connect the backend to create your account.')
+    try {
+      const result = await dispatch(
+        signupUser({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          password: form.password,
+          confirmPassword: form.confirmPassword,
+        }),
+      ).unwrap();
+
+      setMessage(result.message || "Account created successfully.");
+
+      setForm(INITIAL_FORM);
+    } catch (errorMessage) {
+      console.error("Signup failed:", errorMessage);
+    }
   }
 
   return (
@@ -119,20 +152,29 @@ export default function Signup() {
           />
         </div>
 
-        <button className="submit-button signup-submit" type="submit">
-          Create account <ArrowRight size={18} />
+        <button
+          className="submit-button signup-submit"
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? "Creating account..." : "Create account"}
+          {!loading && <ArrowRight size={18} />}
         </button>
 
-        {message && (
-          <p className="form-message" role="status">
-            {message}
+        {(message || error || signupSuccess) && (
+          <p className="form-message" role={error ? "alert" : "status"}>
+            {message ||
+              (typeof error === "string" ? error : "") ||
+              "Account created successfully."}
           </p>
         )}
+
+        
       </form>
 
       <p className="signup-prompt">
         Have an account? <Link to="/login">Log in</Link>
       </p>
     </AuthLayout>
-  )
+  );
 }
