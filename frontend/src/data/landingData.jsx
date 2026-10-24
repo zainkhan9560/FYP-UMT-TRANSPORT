@@ -1,106 +1,98 @@
 
 import {
   BusFront,
-  Clock3,
   MapPin,
-  BellRing,
+  Clock3,
   ShieldCheck,
   Route,
-} from 'lucide-react'
+  BellRing,
+} from "lucide-react";
 
-import { Link } from 'react-router-dom'
+// These are sample frontend routes, not verified official transport data.
+export const routes = [
+  { name: "Askari X", stops: 9 },
+  { name: "Badami Bagh", stops: 9 },
+  { name: "Bahria Town", stops: 7 },
+  { name: "Central Park Kahna", stops: 8 },
+  { name: "Daroghawala", stops: 8 },
+  { name: "DHA", stops: 9 },
+  { name: "Manawan", stops: 8 },
+  { name: "Paragon City", stops: 8 },
+  { name: "Shahdara", stops: 8 },
+];
+
+const totalStops = routes.reduce(
+  (sum, route) => sum + route.stops,
+  0
+);
+
+export const stats = [
+  { value: String(routes.length), label: "Sample routes listed" },
+  { value: String(totalStops), label: "Sample stops" },
+  { value: "GPS", label: "Tracking integration planned" },
+  { value: "AI / ML", label: "ETA prediction goal" },
+];
+
+export const navigationLinks = [
+  { label: "Tracking preview", href: "#tracking" },
+  { label: "Routes", href: "#routes" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Features", href: "#features" },
+];
+
+export const steps = [
+  {
+    title: "Create your account",
+    description:
+      "Sign up to access the UMTGo transport experience.",
+  },
+  {
+    title: "Explore routes",
+    description:
+      "Browse the available route entries and transport information.",
+  },
+  {
+    title: "Plan your commute",
+    description:
+      "Use the information available in the system to prepare for your journey.",
+  },
+];
 
 export const features = [
   {
     icon: MapPin,
-    title: 'Live Bus Tracking',
+    title: "Route discovery",
     description:
-      'View the bus location on a map and follow its journey toward your pickup stop.',
-  },
-  {
-    icon: Clock3,
-    title: 'Smart ETA Prediction',
-    description:
-      'Get estimated arrival times using route information and available location history.',
-  },
-  {
-    icon: Route,
-    title: 'Route Information',
-    description:
-      'Explore bus routes, pickup points, and destinations before starting your journey.',
-  },
-  {
-    icon: BellRing,
-    title: 'Travel Notifications',
-    description:
-      'Receive transport updates and delay notifications when the service supports them.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Role-Based Access',
-    description:
-      'Provide separate dashboards and permissions for students, drivers, and administrators.',
+      "Browse listed pickup areas and find the route relevant to your commute.",
   },
   {
     icon: BusFront,
-    title: 'Transport Management',
+    title: "Transport overview",
     description:
-      'Help authorized staff manage buses, drivers, routes, and service information.',
+      "Keep essential transport information together in one place.",
   },
-]
-
-export const steps = [
   {
-    number: '01',
-    title: 'Sign in',
+    icon: Clock3,
+    title: "Arrival-time planning",
     description:
-      'Log in to your account and select your assigned bus route.',
+      "ETA support depends on connected transport data and a validated model.",
   },
   {
-    number: '02',
-    title: 'Track your bus',
+    icon: Route,
+    title: "Route information",
     description:
-      'View the latest reported location and estimated arrival time.',
+      "Review sample route and stop details from the frontend.",
   },
   {
-    number: '03',
-    title: 'Plan your trip',
+    icon: BellRing,
+    title: "Useful updates",
     description:
-      'Use the available information to plan when to leave for your stop.',
-  },
-]
-
-export const routes = [
-  { name: 'Askari X', stops: 'View route stops' },
-  { name: 'Bahria Town', stops: 'View route stops' },
-  { name: 'DHA', stops: 'View route stops' },
-  { name: 'Paragon City', stops: 'View route stops' },
-  { name: 'Shahdara', stops: 'View route stops' },
-  { name: 'Central Park', stops: 'View route stops' },
-]
-
-export const navigationLinks = [
-  { label: 'Features', to: '#features' },
-  { label: 'How it works', to: '#how-it-works' },
-  { label: 'Routes', to: '#routes' },
-]
-
-export const stats = [
-  {
-    value: "6+",
-    label: "Transport Routes",
+      "A foundation for future transport announcements and trip updates.",
   },
   {
-    value: "24/7",
-    label: "Transport Access",
-  },
-  {
-    value: "Live",
-    label: "Bus Tracking",
-  },
-  {
-    value: "3",
-    label: "User Roles",
+    icon: ShieldCheck,
+    title: "Student-focused access",
+    description:
+      "A transport experience designed around the UMT community.",
   },
 ];
-

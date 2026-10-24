@@ -1,20 +1,26 @@
-import { useEffect } from 'react'
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { useEffect } from "react";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 
-import Landing from './pages/landing/Landing.jsx'
-import Login from './pages/auth/Login.jsx'
-import Signup from './pages/auth/Signup.jsx'
-import ForgotPassword from './pages/auth/ForgotPassword.jsx'
+import Landing from "./pages/common/Landing.jsx";
+import Login from "./pages/auth/Login.jsx";
+import Signup from "./pages/auth/Signup.jsx";
+import ForgotPassword from "./pages/auth/ForgotPassword.jsx";
 
 /** Scroll to top on route change (but let in-page #anchors work normally). */
 function ScrollToTop() {
-  const { pathname, hash } = useLocation()
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (!hash) window.scrollTo({ top: 0, left: 0 })
-  }, [pathname, hash])
+    if (!hash) window.scrollTo({ top: 0, left: 0 });
+  }, [pathname, hash]);
 
-  return null
+  return null;
 }
 
 export default function App() {
@@ -29,5 +35,5 @@ export default function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
