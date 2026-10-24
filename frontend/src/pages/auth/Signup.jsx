@@ -83,13 +83,18 @@ export default function Signup() {
 
   return (
     <AuthLayout mode="signup">
-      <div className="form-heading">
-        <h2>Create student account</h2>
-        <p>Drivers are registered by the transport office.</p>
+      <div className="mb-4 text-center">
+        <h2 className="mb-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+          Create student account
+        </h2>
+
+        <p className="text-sm leading-relaxed text-slate-500">
+          Drivers are registered by the transport office.
+        </p>
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <div className="field-row">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <AuthInput
             id="signup-name"
             label="Full name"
@@ -124,7 +129,7 @@ export default function Signup() {
           required
         />
 
-        <div className="field-row">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <AuthInput
             id="signup-password"
             label="Password"
@@ -140,7 +145,7 @@ export default function Signup() {
 
           <AuthInput
             id="signup-confirm-password"
-            label="Confirm"
+            label="Confirm password"
             name="confirmPassword"
             type="password"
             placeholder="Re-enter password"
@@ -153,27 +158,35 @@ export default function Signup() {
         </div>
 
         <button
-          className="submit-button signup-submit"
           type="submit"
           disabled={loading}
+          className="mt-2 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#00307f] px-5 py-3 text-sm font-bold text-white transition duration-200 hover:bg-[#00235c] hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
         >
           {loading ? "Creating account..." : "Create account"}
+
           {!loading && <ArrowRight size={18} />}
         </button>
 
         {(message || error || signupSuccess) && (
-          <p className="form-message" role={error ? "alert" : "status"}>
+          <p
+            className="mt-3 break-words rounded-lg border border-blue-200 bg-blue-50 px-3 py-2.5 text-sm leading-relaxed text-[#00307f]"
+            role={error ? "alert" : "status"}
+          >
             {message ||
               (typeof error === "string" ? error : "") ||
               "Account created successfully."}
           </p>
         )}
-
-        
       </form>
 
-      <p className="signup-prompt">
-        Have an account? <Link to="/login">Log in</Link>
+      <p className="mt-5 text-center text-sm leading-relaxed text-slate-500">
+        Have an account?{" "}
+        <Link
+          to="/login"
+          className="font-bold text-[#0a3d9c] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+        >
+          Log in
+        </Link>
       </p>
     </AuthLayout>
   );

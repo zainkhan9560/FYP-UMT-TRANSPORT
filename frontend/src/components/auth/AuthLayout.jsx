@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, Clock3, MapPin, Navigation } from 'lucide-react'
 
-import umtLogo from '../../assets/brand/umt-logo.png'
-import umtSeal from '../../assets/brand/umt-seal.png'
-import shuttle from '../../assets/campus/campus-shuttle.webp'
+import umtLogo from '../../assets/brand/umt_logo.png'
+import umtSeal from '../../assets/brand/umt_seal.png'
+import shuttle from '../../assets/campus/campus_shuttle.webp'
 import lawn from '../../assets/campus/campus-lawn.webp'
 import building from '../../assets/campus/campus-building.webp'
 import '../../styles/auth.css'
